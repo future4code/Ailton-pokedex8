@@ -1,20 +1,19 @@
-import React from 'react'
-import { HeaderComp } from '../Header/Header'
+import React from "react";
+import { HeaderComp } from "../Header/Header";
 import { useNavigate } from "react-router-dom";
-import { goTo } from '../../Functions/goTo';
+import { goTo } from "../../Functions/goTo";
 export const Home = () => {
-
-  const navigate = useNavigate()
-
+  const navigate = useNavigate();
 
   return (
     <>
-      <HeaderComp showing={false}/>
+      <HeaderComp showing1={false} showing2={true} />
       <div>
-      <button onClick={()=>goTo(navigate,"pokedex")} >Ir para pokedex</button>
-      <button onClick={()=>goTo(navigate,"detail/:id")} >Ir para details</button>
-    </div>      
+        <h1>Home</h1>
+        <button onClick={() => goTo(navigate, "detail/:id")}>
+          Detalhes do Pikomon
+        </button>
+      </div>
     </>
-    
-  )
-}
+  );
+};
