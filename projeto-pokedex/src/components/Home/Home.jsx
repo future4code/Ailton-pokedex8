@@ -1,7 +1,11 @@
 import React from 'react'
+import { HeaderComp } from '../Header/Header'
 
 export const Home = () => {
   return (
-    <div>Home</div>
+    <>
+      <HeaderComp showing={false}/>
+      
+    </>
   )
 }
