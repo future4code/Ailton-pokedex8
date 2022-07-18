@@ -1,19 +1,20 @@
 import React from 'react'
+import { HeaderComp } from '../Header/Header'
 import { useNavigate } from "react-router-dom";
 import { goTo } from '../../Functions/goTo';
-
-
 export const Home = () => {
 
   const navigate = useNavigate()
 
 
   return (
-    <div>
-      Home
+    <>
+      <HeaderComp showing={false}/>
+      <div>
       <button onClick={()=>goTo(navigate,"pokedex")} >Ir para pokedex</button>
       <button onClick={()=>goTo(navigate,"detail/:id")} >Ir para details</button>
-    </div>
+    </div>      
+    </>
     
   )
 }

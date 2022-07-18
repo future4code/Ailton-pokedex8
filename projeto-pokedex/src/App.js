@@ -3,7 +3,7 @@ import { createGlobalStyle } from "styled-components";
 import { Router } from "./components/Routes/Router";
 
 const GlobalStyle = createGlobalStyle`
-body {
+body {  
   padding: 0;
   margin: 0;
   box-sizing: border-box;
