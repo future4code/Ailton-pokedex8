@@ -1,5 +1,6 @@
 import { Home } from "./components/Home/Home";
 import { createGlobalStyle } from "styled-components";
+import { Router } from "./components/Routes/Router";
 
 const GlobalStyle = createGlobalStyle`
 body {  
@@ -13,7 +14,7 @@ function App() {
   return (
     <>
       <GlobalStyle />
-      <Home />
+      <Router />
     </>
   );
 }
