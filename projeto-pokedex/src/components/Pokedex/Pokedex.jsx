@@ -1,16 +1,12 @@
 import React from 'react'
-import { useNavigate } from "react-router-dom";
-import { goTo } from '../../Functions/goTo';
+import { HeaderComp } from '../Header/Header';
 
 export const Pokedex = () => {
 
-  const navigate = useNavigate()
-
   return (
     <div>
-      Pokedex
-      <button onClick={()=>goTo(navigate,"/")} >Ir para home</button>
-      
+      <HeaderComp showing1={true} showing2={false}/>
+      <h1>Pokedex</h1>     
     </div>
   )
 }
