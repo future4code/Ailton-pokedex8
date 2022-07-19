@@ -5,22 +5,13 @@ import {Details} from '../Details/Details';
 
 
 export const Router = () => {
-
-
     return (
-
         <BrowserRouter>
             <Routes>
-
                 <Route index element={<Home/>} />
                 <Route path="/pokedex" element={<Pokedex />} />
-                <Route path="/detail/:id" element={<Details />} />
-
-
+                <Route path="/detail/:pokemon" element={<Details />} />
             </Routes>
         </BrowserRouter>
-
     )
-
-
 } 

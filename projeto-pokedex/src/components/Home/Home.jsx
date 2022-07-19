@@ -1,18 +1,33 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import { HeaderComp } from "../Header/Header";
 import { useNavigate } from "react-router-dom";
-import { goTo } from "../../Functions/goTo";
+import axios from "axios";
+
 export const Home = () => {
+  const [pokemon, setPokemon] = useState([])
   const navigate = useNavigate();
+  const takePokemon = async() => {
+    try {    
+    const res = await axios.get("https://pokeapi.co/api/v2/pokemon")
+    setPokemon(res.data.results)     
+    } catch (error) {
+      console.log(error)      
+    }
+  }
+  useEffect(()=>{
+    takePokemon()
+  }, [])
 
   return (
     <>
       <HeaderComp showing1={false} showing2={true} />
       <div>
-        <h1>Home</h1>
-        <button onClick={() => goTo(navigate, "detail/:id")}>
-          Detalhes do Pikomon
-        </button>
+        {pokemon[0] && pokemon.map(data=>{
+          const {name, url} = data
+          return (
+            <p>{name}</p>
+          )
+        })}
       </div>
     </>
   );
