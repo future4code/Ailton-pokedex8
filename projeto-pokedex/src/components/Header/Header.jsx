@@ -8,7 +8,7 @@ import {
   PokedexButtonDiv,
 } from "./HeaderStyle";
 import PokeLogo from "../../images/pokelogo.png";
-import { goTo } from "../../functions/goTo";
+import { goTo } from "../../Functions/goTo";
 import { useNavigate } from "react-router-dom";
 
 //showingAllButtons={true} showingAddButton={false}

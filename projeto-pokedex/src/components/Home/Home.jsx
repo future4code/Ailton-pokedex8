@@ -1,14 +1,17 @@
 import React, {useEffect, useState} from "react";
 import { HeaderComp } from "../Header/Header";
 import { useNavigate } from "react-router-dom";
+import { goTo } from "../../Functions/goTo";
 import axios from "axios";
+import {baseUrl} from '../../constants/url';
+
 
 export const Home = () => {
   const [pokemon, setPokemon] = useState([])
   const navigate = useNavigate();
   const takePokemon = async() => {
     try {    
-    const res = await axios.get("https://pokeapi.co/api/v2/pokemon")
+    const res = await axios.get(baseUrl)
     setPokemon(res.data.results)     
     } catch (error) {
       console.log(error)      
@@ -22,10 +25,10 @@ export const Home = () => {
     <>
       <HeaderComp showing1={false} showing2={true} />
       <div>
-        {pokemon[0] && pokemon.map(data=>{
-          const {name, url} = data
+        {pokemon?.map(({name, url})=>{
+          
           return (
-            <p>{name}</p>
+            <p onClick={()=> goTo(navigate,`/detail/${name}`)}>{name}</p>
           )
         })}
       </div>
