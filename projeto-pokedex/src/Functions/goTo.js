@@ -1,5 +1,3 @@
-
-
-export const goTo = (navigateP,page) => {
-    navigateP(`${page}`)
-    }
+export const goTo = (navigateP, page) => {
+  navigateP(`${page}`);
+};
