@@ -10,6 +10,7 @@ height: 160px;
 
 export const AllPokemonsDiv = styled.div`
 width: 30%;
+
 `
 
 export const AllPokemons = styled.p`
