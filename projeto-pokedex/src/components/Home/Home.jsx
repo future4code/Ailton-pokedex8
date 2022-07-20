@@ -1,12 +1,8 @@
+import axios from "axios";
 import React, {useEffect, useState} from "react";
 import { HeaderComp } from "../Header/Header";
-import { useNavigate } from "react-router-dom";
-// import { goTo } from "../../Functions/goTo";
-import axios from "axios";
 import {baseUrl} from '../../constants/url';
 import { Card } from "../Card/Card";
-
-
 
 export const Home = () => {
   const [pokemon, setPokemon] = useState([])
@@ -25,15 +21,12 @@ export const Home = () => {
   }, [])
 
   return (
-    <>
-     
+    <>     
       <HeaderComp showing1={false} showing2={true} />
       <div>
-        {pokemon?.map(({name})=>{
-          
+        {pokemon?.map(({name})=>{          
           return (
-            <Card pokemon={name}/>
-            
+            <Card pokemon={name}/>            
           )
         })}
       </div>
