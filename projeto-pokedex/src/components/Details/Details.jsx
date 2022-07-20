@@ -28,7 +28,7 @@ export const Details = () => {
     
   },[])
   
-  console.log(pokemonDetail)
+  // console.log(pokemonDetail)
 
 
   const statsArray = pokemonDetail?.stats.map((data)=> {
@@ -59,17 +59,14 @@ export const Details = () => {
 
   })
 
-  const max = () => {
-    if (statsArray){
-      return (
-        Math.max(statsArray)
-      )
-    }else{
-      return 0
-    }
-  }
+  const max = statsArray?.reduce((a,b)=>{
+    return Math.max(a,b)
+  })
   
-  console.log(totalStats)
+  console.log(max)
+  
+  
+  
   
 
   return (
@@ -95,7 +92,7 @@ export const Details = () => {
             
             <Stats>
               
-              {/* <StatsDiv><p>HP</p><p>{pokemonDetail?.stats[0].base_stat}</p><StatsBar size={maxi}></StatsBar></StatsDiv> */}
+              <StatsDiv><p>HP</p><p>{pokemonDetail?.stats[0].base_stat}</p><StatsBar size={max}></StatsBar></StatsDiv>
               <StatsDiv><p>Attack</p><p>{pokemonDetail?.stats[1].base_stat}</p></StatsDiv>
               <StatsDiv><p>Defense</p><p>{pokemonDetail?.stats[2].base_stat}</p></StatsDiv>
               <StatsDiv><p>Sp.Atk</p><p>{pokemonDetail?.stats[3].base_stat}</p></StatsDiv>

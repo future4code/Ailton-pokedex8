@@ -131,6 +131,7 @@ display: flex;
 gap: 10px;
 `
 export const StatsBar = styled.div`
-width: 100%;
+/* width: ${props=>props.size}%; */
+width: 65%;
 background-color: orangered;
 `
