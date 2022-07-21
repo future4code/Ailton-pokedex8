@@ -5,12 +5,12 @@ import { HeaderComp } from '../Header/Header';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import { baseUrl } from '../../constants/url';
-import { H1Style,MovesDiv, Stats, StatsDiv, StatsBar,PokeballAbsolute,PokeAbsolute, TitleBaseStats, NameDiv, Separator1, Separator4, Separator2,Separator3, NameMovesDiv, StatsContainer,PokePicsBack, PokePicsFront, PicDiv, Card, ContainerGeral } from './DetailsStyle';
+import { H1Style, NameP, MovesDiv, Stats, StatsDiv, StatsBar, PokeballAbsolute, PokeAbsolute, TitleBaseStats, NameDiv, Separator1, Separator4, Separator2, Separator3, NameMovesDiv, StatsContainer, PokePicsBack, PokePicsFront, PicDiv, Card, ContainerGeral } from './DetailsStyle';
 import CardBackground from '../../images/cardbackgroundpoke2.png'
 
 
 export const Details = () => {
-  const {pokemon} = useParams()
+  const { pokemon } = useParams()
   const navigate = useNavigate()
   const [pokemonDetail, setPokemonDetail] = useState()
 
@@ -19,33 +19,33 @@ export const Details = () => {
       const response = await axios.get(`${baseUrl}/${pokemon}`)
       setPokemonDetail(response.data)
     } catch (error) {
-      
+
     }
   }
 
-  useEffect(()=> {
+  useEffect(() => {
     getDetail()
-    
-  },[])
-  
+
+  }, [])
+
   // console.log(pokemonDetail)
 
 
-  const statsArray = pokemonDetail?.stats.map((data)=> {
-      return (
-        data[`base_stat`]
-        
-      )
-      
-  
-    })
-  
-  
+  const statsArray = pokemonDetail?.stats.map((data) => {
+    return (
+      data[`base_stat`]
+
+    )
+
+
+  })
+
+
   // if(statsArray){
 
-    
+
   // }
-  
+
 
   // const statsArray = pokemonDetail?.stats.map((data) => {
   //   return(
@@ -53,55 +53,62 @@ export const Details = () => {
   //   )
   // }) 
 
-  const totalStats = statsArray?.reduce((previousValue, currentValue)=>{
+  const totalStats = statsArray?.reduce((previousValue, currentValue) => {
 
-    return previousValue+currentValue
+    return previousValue + currentValue
 
   })
 
-  const max = statsArray?.reduce((a,b)=>{
-    return Math.max(a,b)
+  const max = statsArray?.reduce((a, b) => {
+    return Math.max(a, b)
   })
-  
+
   console.log(max)
-  
-  
-  
-  
+
+
+
 
   return (
     <>
-      
+
       <HeaderComp showing1={true} showing2={true} />
-      
+
       <ContainerGeral>
-        
+
         <H1Style>{`Detalhes`}</H1Style>
         <Separator1></Separator1>
         <Card>
           <PicDiv>
-            {pokemonDetail && <PokePicsFront src={pokemonDetail?.sprites.front_default}/>
+            {pokemonDetail && <PokePicsFront src={pokemonDetail?.sprites.front_default} />
             }
             <Separator2></Separator2>
-            {pokemonDetail && <PokePicsBack src={pokemonDetail?.sprites.back_default}/>
+            {pokemonDetail && <PokePicsBack src={pokemonDetail?.sprites.back_default} />
             }
           </PicDiv>
           <Separator3></Separator3>
           <StatsContainer>
             <TitleBaseStats>Base stats</TitleBaseStats>
-            
+
             <Stats>
+
+              {/* {pokemonDetail?.stats[0].base_stat >25 && pokemonDetail?.stats[0].base_stat <50 && } */}
+
+              <StatsDiv><NameP>HP</NameP><p>{pokemonDetail?.stats[0].base_stat}</p><StatsBar color={pokemonDetail?.stats[0].base_stat} size={(pokemonDetail?.stats[0].base_stat) / 2}></StatsBar></StatsDiv>
               
-              <StatsDiv><p>HP</p><p>{pokemonDetail?.stats[0].base_stat}</p><StatsBar size={max}></StatsBar></StatsDiv>
-              <StatsDiv><p>Attack</p><p>{pokemonDetail?.stats[1].base_stat}</p></StatsDiv>
-              <StatsDiv><p>Defense</p><p>{pokemonDetail?.stats[2].base_stat}</p></StatsDiv>
-              <StatsDiv><p>Sp.Atk</p><p>{pokemonDetail?.stats[3].base_stat}</p></StatsDiv>
-              <StatsDiv><p>Sp.Def</p><p>{pokemonDetail?.stats[4].base_stat}</p></StatsDiv>
-              <StatsDiv><p>Speed</p><p>{pokemonDetail?.stats[5].base_stat}</p></StatsDiv>
-              <StatsDiv><p>Total</p><p>{totalStats}</p></StatsDiv>
+              <StatsDiv><NameP>Attack</NameP><p>{pokemonDetail?.stats[1].base_stat}</p><StatsBar color={pokemonDetail?.stats[1].base_stat} size={(pokemonDetail?.stats[1].base_stat) / 2}></StatsBar></StatsDiv>
               
+              <StatsDiv><NameP>Defense</NameP><p>{pokemonDetail?.stats[2].base_stat}</p><StatsBar color={pokemonDetail?.stats[2].base_stat} size={(pokemonDetail?.stats[2].base_stat) / 2}></StatsBar></StatsDiv>
+              
+              <StatsDiv><NameP>Sp.Atk</NameP><p>{pokemonDetail?.stats[3].base_stat}</p><StatsBar color={pokemonDetail?.stats[3].base_stat} size={(pokemonDetail?.stats[3].base_stat) / 2}></StatsBar></StatsDiv>
+              
+              <StatsDiv><NameP>Sp.Def</NameP><p>{pokemonDetail?.stats[4].base_stat}</p><StatsBar color={pokemonDetail?.stats[4].base_stat} size={(pokemonDetail?.stats[4].base_stat) / 2}></StatsBar></StatsDiv>
+              
+              <StatsDiv><NameP>Speed</NameP><p>{pokemonDetail?.stats[5].base_stat}</p><StatsBar color={pokemonDetail?.stats[5].base_stat} size={(pokemonDetail?.stats[5].base_stat) / 2}></StatsBar></StatsDiv>
+              
+              <StatsDiv><NameP>Total</NameP><p>{totalStats}</p></StatsDiv>
+
             </Stats>
-          
+
           </StatsContainer>
           <Separator4></Separator4>
           <NameMovesDiv>
@@ -112,13 +119,13 @@ export const Details = () => {
 
             </MovesDiv>
           </NameMovesDiv>
-          <PokeAbsolute src={pokemonDetail?.sprites.other[`official-artwork`].front_default}/>
+          <PokeAbsolute src={pokemonDetail?.sprites.other[`official-artwork`].front_default} />
 
-            <PokeballAbsolute src={CardBackground}/>
-          
-          
+          <PokeballAbsolute src={CardBackground} />
+
+
         </Card>
-              
+
 
       </ContainerGeral>
     </>

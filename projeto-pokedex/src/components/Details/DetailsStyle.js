@@ -129,9 +129,19 @@ export const Stats = styled.div`
 export const StatsDiv = styled.div `
 display: flex;
 gap: 10px;
+background-color: lightgreen;
+/* justify-content: space-between; */
 `
 export const StatsBar = styled.div`
-/* width: ${props=>props.size}%; */
-width: 65%;
-background-color: orangered;
+width: ${props=>props.size}%;
+/* width: 65%; */
+/* background-color: ${props=>props.color < 50 ? `#FF7C2D` : `#FF5C5D`} ; */
+/* background-color: ${props=> props.color <50>25 ? `#FFDD6A`: `#FF7C2D`}; */
+background-color: ${props=> props.color <25 && `#EF1700`};
+background-color: ${props=> props.color >=25 && props.color <50 && `#FF7C2D`};
+background-color: ${props=> props.color >=50 && `#FFDD6A`};
+background-color: ${props=> props.color >=100 && `#612B8A`};
+`
+export const NameP = styled.p `
+width: 15%;
 `
