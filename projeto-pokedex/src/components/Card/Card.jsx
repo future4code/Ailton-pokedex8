@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { baseUrl } from '../../constants/url'
+import {goTo} from '../../Functions/goTo'
 import axios from 'axios'
 import { 
     Container,
@@ -8,9 +9,13 @@ import {
     DivRobin, 
     ImagePokemon
 } from './CardStyle'
+import { useNavigate } from 'react-router-dom'
 
 
 export const Card = ({pokemon}) => {
+
+    const navigate = useNavigate()
+
     const [pokemonDetail, setPokemonDetail] = useState({id:0,name:"",types:0})
 
     const getDetail = async () => {
@@ -28,6 +33,10 @@ export const Card = ({pokemon}) => {
       getDetail()
     },[])
     const {id,name,types} = pokemonDetail;
+
+ 
+
+
   return (
     
     <>
@@ -38,14 +47,14 @@ export const Card = ({pokemon}) => {
                 <p>{id}</p>
                 <p>{name}</p>
                 <div> 
-                    <div>{types.type.name}</div>
+                    {/* <div>{types.type.name}</div> */}
                     <div>tipo2</div>
                 </div>
             </DetailsDiv>
             <ImagePokemon></ImagePokemon>
         </DivBatman>
         <DivRobin>
-            <button>Detalhes</button>
+            <button onClick={()=> goTo(navigate,`/detail/${name}`)}>Detalhes</button>
             <button>Catupiri</button>
         </DivRobin>
     </Container>
