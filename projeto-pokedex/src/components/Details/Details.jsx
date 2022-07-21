@@ -9,6 +9,7 @@ import { H1Style, NameP,Separator5,Teste, NumberPTotal, MovesDiv, Stats, StatsDi
 import CardBackground from '../../images/cardbackgroundpoke2.png'
 
 
+
 export const Details = () => {
   const { pokemon } = useParams()
   const navigate = useNavigate()
@@ -89,6 +90,7 @@ export const Details = () => {
           <StatsContainer>
           
             <TitleBaseStats>Base stats</TitleBaseStats>
+            {/* {sla que isso kkk ====================================} */}
             <Separator5/>
             <Stats>
 
