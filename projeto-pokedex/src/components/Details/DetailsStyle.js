@@ -3,8 +3,8 @@ import CardBackground from '../../images/cardbackgroundpoke.png'
 
 export const Separator1 = styled.div `
 height: 56px;
-
 `
+
 export const Separator2 = styled.div`
 height: 47px;
 `

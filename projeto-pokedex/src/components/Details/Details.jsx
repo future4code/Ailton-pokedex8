@@ -17,9 +17,10 @@ import {
   TitleBaseStats,
   NameDiv,
   Separator1,
-  Separator4,
   Separator2,
   Separator3,
+  Separator4,
+  Separator5,
   NameMovesDiv,
   StatsContainer,
   PokePicsBack,
@@ -74,6 +75,7 @@ export const Details = () => {
           <StatsContainer>
           
             <TitleBaseStats>Base stats</TitleBaseStats>
+            {/* {sla que isso kkk ====================================} */}
             <Separator5/>
             <Stats>
               {/* {pokemonDetail?.stats[0].base_stat >25 && pokemonDetail?.stats[0].base_stat <50 && } */}

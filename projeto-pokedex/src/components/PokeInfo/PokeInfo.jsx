@@ -16,7 +16,7 @@ export const PokeInfo = ({ id, name, types }) => {
   return (
     <>
       <p>#{id}</p>
-      <h1>{name}</h1>
+      <h1>{name.charAt(0).toUpperCase() + name.slice(1)}</h1>
       <DivTypes>
         {types[0] && (
           <>
