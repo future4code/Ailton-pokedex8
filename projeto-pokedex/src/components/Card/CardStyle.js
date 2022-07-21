@@ -21,24 +21,17 @@ background: ${props=>props.color === `ice` && "#74CEC0"};
 background: ${props=>props.color === `psychic` && "#F67176"};
 background: ${props=>props.color === `rock` && "#C7B78B"};
 background: ${props=>props.color === `steel` && "#BBBBBB"};
-
-
 border-radius: 12px;
-
 `
 export const DivBatman= styled.div`
-
 `
 export const DetailsDiv= styled.div`
 padding: 23px;
-    
-
 `
 export const ImagePokemon= styled.img`
 `
 export const DivRobin= styled.div`
 justify-content:space-between;
-
 display:flex;
 padding: 7px;
 `

@@ -5,28 +5,28 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { baseUrl } from '../../constants/url';
 import { Card } from "../Card/Card";
-import { ContainerGeral, H1Style } from "./HomeStyle";
+import { ContainerGeral, Title, TitleStyle } from "./HomeStyle";
 
 export const Home = () => {
   const [pokemon, setPokemon] = useState([])
   // const navigate = useNavigate();
-  const takePokemon = async () => {
+  const takePokemon = async (start, number) => {
     try {
-      const res = await axios.get(`${baseUrl}/?offset=0&limit=151`)
+      const res = await axios.get(`${baseUrl}/?offset=${start}&limit=${number}`)
       setPokemon(res.data.results)
     } catch (error) {
       console.log(error)
     }
   }
   useEffect(() => {
-    takePokemon()
+    takePokemon(0, 21)
   }, [])
 
   return (
     <>
       <HeaderComp showing1={false} showing2={true} />
       <ContainerGeral>
-        {/* <H1Style>{`Todos os Pokémons`}</H1Style> */}
+        <Title>Todos os Pokemons</Title>
         {pokemon?.map(({ name }) => {
           return (
             <Card key={name} pokemon={name} />
