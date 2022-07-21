@@ -23,7 +23,6 @@ flex: 1;
 justify-content: center;
 align-items: center;
 background-color: grey;
-display: flex;
 flex-direction: column;
 /* justify-content: space-between; */
 padding: 60px 25px;
@@ -33,11 +32,9 @@ width:100%;
 font-family: "Poppins";
 font-size: 48px;
 font-weight: normal;
-/* line-height: 72px; */
 color: #FFFFFF;
 display: flex;
 align-items: start;
-/* background-color: #FFFFFF; */
 `
 export const Card = styled.div `
 

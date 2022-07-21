@@ -1,64 +1,58 @@
 import React, { useEffect, useState } from 'react'
 import { baseUrl } from '../../constants/url'
-import {goTo} from '../../Functions/goTo'
+import { goTo } from '../../Functions/goTo'
 import axios from 'axios'
-import { 
-    Container,
-    DetailsDiv,
-    DivBatman,
-    DivRobin, 
-    ImagePokemon
+import {
+  Container,
+  DetailsDiv,
+  DivBatman,
+  DivRobin,
+  ImagePokemon
 } from './CardStyle'
+import { PokeInfo } from '../PokeInfo/PokeInfo'
 import { useNavigate } from 'react-router-dom'
 
 
-export const Card = ({pokemon}) => {
+export const Card = ({ pokemon }) => {
 
-    const navigate = useNavigate()
+  const navigate = useNavigate()
 
-    const [pokemonDetail, setPokemonDetail] = useState({id:0,name:"",types:0})
+  const [pokemonDetail, setPokemonDetail] = useState(undefined)
 
-    const getDetail = async () => {
-      try {
-        const response = await axios.get(`${baseUrl}/${pokemon}`)
-        console.log(response.data)
-        setPokemonDetail(response.data)
-        
-      } catch (error) {
-        
-      }
+  const getDetail = React.useCallback( async () => {
+    try {
+      const response = await axios.get(`${baseUrl}/${pokemon}`)
+
+      setPokemonDetail(response.data)
+
+    } catch (error) {
+
     }
-   
-    useEffect(()=> {
-      getDetail()
-    },[])
-    const {id,name,types} = pokemonDetail;
-
- 
-
+  },[]) 
+  useEffect(() => {
+    getDetail()
+  }, [])
 
   return (
-    
     <>
- 
-    <Container>
-        <DivBatman> 
-            <DetailsDiv>
-                <p>{id}</p>
-                <p>{name}</p>
-                <div> 
-                    {/* <div>{types.type.name}</div> */}
-                    <div>tipo2</div>
-                </div>
-            </DetailsDiv>
-            <ImagePokemon></ImagePokemon>
-        </DivBatman>
-        <DivRobin>
-            <button onClick={()=> goTo(navigate,`/detail/${name}`)}>Detalhes</button>
-            <button>Catupiri</button>
-        </DivRobin>
-    </Container>
+        {pokemonDetail && (
+      <Container color={pokemonDetail.types[0].type.name}>
+          <>
+            <DivBatman>
+              <DetailsDiv >
+                {pokemonDetail && <PokeInfo id={pokemonDetail.id} name={pokemonDetail.name} types={pokemonDetail.types} />}
+
+              </DetailsDiv>
+              <ImagePokemon></ImagePokemon>
+            </DivBatman>
+            <DivRobin>
+              <p onClick={() => goTo(navigate, `/detail/${pokemonDetail.name}`)}>Detalhes</p>
+              <button>Catupiri</button>
+            </DivRobin>
+          </>
+      </Container>
+      )}
     </>
-    
+
   )
 }

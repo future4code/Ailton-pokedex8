@@ -1,42 +1,38 @@
-import React, {useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 import { HeaderComp } from "../Header/Header";
 import { useNavigate } from "react-router-dom";
 // import { goTo } from "../../Functions/goTo";
 import axios from "axios";
-import {baseUrl} from '../../constants/url';
+import { baseUrl } from '../../constants/url';
 import { Card } from "../Card/Card";
-
-
+import { ContainerGeral, H1Style } from "./HomeStyle";
 
 export const Home = () => {
   const [pokemon, setPokemon] = useState([])
   // const navigate = useNavigate();
-  const takePokemon = async() => {
-    try {    
-    const res = await axios.get(baseUrl)
-    console.log(res.data)
-    setPokemon(res.data.results)     
+  const takePokemon = async () => {
+    try {
+      const res = await axios.get(`${baseUrl}/?offset=0&limit=151`)
+      setPokemon(res.data.results)
     } catch (error) {
-      console.log(error)      
+      console.log(error)
     }
   }
-  useEffect(()=>{
+  useEffect(() => {
     takePokemon()
   }, [])
 
   return (
     <>
-     
       <HeaderComp showing1={false} showing2={true} />
-      <div>
-        {pokemon?.map(({name})=>{
-          
+      <ContainerGeral>
+        {/* <H1Style>{`Todos os Pokémons`}</H1Style> */}
+        {pokemon?.map(({ name }) => {
           return (
-            <Card pokemon={name}/>
-            
+            <Card key={name} pokemon={name} />
           )
         })}
-      </div>
+      </ContainerGeral>
     </>
   );
 };
