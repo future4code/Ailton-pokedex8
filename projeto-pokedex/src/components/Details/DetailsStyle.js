@@ -14,6 +14,9 @@ width: 34px;
 export const Separator4 = styled.div`
 width: 68px;
 `
+export const Separator5 = styled.div`
+height: 15px;
+`
 
 export const ContainerGeral = styled.div`
 width: 100%;
@@ -74,9 +77,9 @@ export const StatsContainer = styled.div`
 background-color: #FFFFFF;
 width: 26.4%;
 height: 100%;
-padding: 0px 18px;
+padding: 0px 20px;
 padding-bottom: 227px ;
-padding-top: 43px;
+padding-top: 19px;
 border-radius: 12px;
 z-index: 1;
 
@@ -122,16 +125,28 @@ right: 0;
 
 `
 export const Stats = styled.div`
+display: flex;
+flex-direction: column;
+gap: 10px;
+/* background-color: red; */
 `
 export const StatsDiv = styled.div `
 display: flex;
-gap: 10px;
-background-color: lightgreen;
+align-items:center;
+/* height: 20%; */
+gap: 4.5%;
+/* background-color: lightgreen; */
 /* justify-content: space-between; */
 `
 export const StatsBar = styled.div`
 width: ${props=>props.size}%;
-/* width: 65%; */
+height: 10px;
+display: flex;
+justify-content: center;
+align-items: center;
+border-radius:3px; 
+border: 1px solid #C8C8C8;
+/* width: 65%;
 /* background-color: ${props=>props.color < 50 ? `#FF7C2D` : `#FF5C5D`} ; */
 /* background-color: ${props=> props.color <50>25 ? `#FFDD6A`: `#FF7C2D`}; */
 background-color: ${props=> props.color <25 && `#EF1700`};
@@ -140,5 +155,32 @@ background-color: ${props=> props.color >=50 && `#FFDD6A`};
 background-color: ${props=> props.color >=100 && `#612B8A`};
 `
 export const NameP = styled.p `
-width: 15%;
+width: 18%;
+font-family: "Poppins";
+font-size: 75%;
+display: flex;
+justify-content: right;
+align-items: center;
+/* background-color: red; */
+`
+export const NumberP = styled.p `
+ 
+font-family: "Poppins";
+font-size: 13px;
+display: flex;
+justify-content: center;
+align-items: center;
+width: 10%;
+`
+export const NumberPTotal = styled.p `
+font-family: "Poppins";
+font-size: 13px;
+width: 10%;
+font-weight: bold;
+display: flex;
+justify-content: center;
+align-items: center;
+`
+export const Teste = styled.div`
+width: 50%;
 `

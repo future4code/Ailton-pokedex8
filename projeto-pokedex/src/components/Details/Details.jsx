@@ -30,6 +30,7 @@ import {
 } from "./DetailsStyle";
 import CardBackground from "../../images/cardbackgroundpoke2.png";
 
+
 export const Details = () => {
   const { pokemon } = useParams();
   const navigate = useNavigate();
@@ -71,8 +72,9 @@ export const Details = () => {
           </PicDiv>
           <Separator3></Separator3>
           <StatsContainer>
+          
             <TitleBaseStats>Base stats</TitleBaseStats>
-
+            <Separator5/>
             <Stats>
               {/* {pokemonDetail?.stats[0].base_stat >25 && pokemonDetail?.stats[0].base_stat <50 && } */}
 
@@ -144,7 +146,6 @@ export const Details = () => {
           <PokeAbsolute
             src={pokemonDetail?.sprites.other[`official-artwork`].front_default}
           />
-
           <PokeballAbsolute src={CardBackground} />
         </Card>
       </ContainerGeral>
