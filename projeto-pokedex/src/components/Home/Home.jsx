@@ -1,37 +1,42 @@
-import React, { useEffect, useState } from "react";
 import { HeaderComp } from "../Header/Header";
-import { useNavigate } from "react-router-dom";
-// import { goTo } from "../../Functions/goTo";
-import axios from "axios";
-import { baseUrl } from '../../constants/url';
+import { useState, useEffect } from "react";
 import { Card } from "../Card/Card";
-import { ContainerGeral, Title, TitleStyle } from "./HomeStyle";
-
+import { ContainerGeral, Title } from "./HomeStyle";
+import { useRequestData } from "../../hooks/useRequestData";
+import { ChangePage } from "../ChangePage/ChangePage";
+import axios from "axios";
+import { baseUrl } from "../../constants/url";
 export const Home = () => {
-  const [pokemon, setPokemon] = useState([])
-  // const navigate = useNavigate();
-  const takePokemon = async (start, number) => {
+  const [pokemon, setPokemon] = useState({});
+  const takePokemon = async (start, quantity) => {
     try {
-      const res = await axios.get(`${baseUrl}/?offset=${start}&limit=${number}`)
-      setPokemon(res.data.results)
+      const res = await axios.get(
+        `${baseUrl}/?offset=${start}&limit=${quantity}`
+      );
+      setPokemon(res.data);
     } catch (error) {
-      console.log(error)
+      alert(error);
     }
-  }
+  }; 
+
+  const [page, setPage] = useState(0);
+  // const pokemon = useRequestData(page * 24, 24);
+  const choosePage = () => {
+    setPage(page + 1);
+  };
   useEffect(() => {
-    takePokemon(0, 21)
-  }, [])
+    takePokemon(page * 24, 24);
+  }, [pokemon])
 
   return (
     <>
       <HeaderComp showing1={false} showing2={true} />
-      <ContainerGeral>
+      <ContainerGeral onClick={choosePage}>
         <Title>Todos os Pokemons</Title>
-        {pokemon?.map(({ name }) => {
-          return (
-            <Card key={name} pokemon={name} />
-          )
+        {pokemon.results?.map(({ name }) => {
+          return <Card key={name} pokemon={name} />;
         })}
+        <ChangePage />
       </ContainerGeral>
     </>
   );

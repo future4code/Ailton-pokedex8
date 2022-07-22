@@ -36,13 +36,13 @@ import {
 import CardBackground from "../../images/cardbackgroundpoke2.png";
 
 export const Details = () => {
-  const { pokemon } = useParams();
+  const { name } = useParams();
   const navigate = useNavigate();
   const [pokemonDetail, setPokemonDetail] = useState();
 
   const getDetail = async () => {
     try {
-      const response = await axios.get(`${baseUrl}/${pokemon}`);
+      const response = await axios.get(`${baseUrl}/${name}`);
       setPokemonDetail(response.data);
     } catch (error) {}
   };
@@ -68,7 +68,6 @@ export const Details = () => {
   return (
     <>
       <HeaderComp showing1={true} showing2={true} />
-
       <ContainerGeral>
         <H1Style>{`Detalhes`}</H1Style>
         <Separator1></Separator1>
@@ -84,7 +83,6 @@ export const Details = () => {
           </PicDiv>
           <Separator3></Separator3>
           <StatsContainer>
-            {console.log(pokemonDetail?.moves)}
             <TitleBaseStats>Base stats</TitleBaseStats>
             <Separator5 />
             <Stats>
@@ -131,7 +129,6 @@ export const Details = () => {
           <PokeAbsolute
             src={pokemonDetail?.sprites.other[`official-artwork`].front_default}
           />
-
           <PokeballAbsolute src={CardBackground} />
         </Card>
       </ContainerGeral>
