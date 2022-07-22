@@ -1,18 +1,7 @@
 import { DivTypes, Type, TypeImg, TypeText } from "./PokeInfoStyle";
-import { typesArray } from "../../global/types";
+import { objectTypes } from "../../global/types";
 
 export const PokeInfo = ({ id, name, types }) => {
-  const onlyTypeNames = typesArray.map(({ name }) => {
-    return name;
-  });
-
-  const indexOfFirstType = onlyTypeNames.indexOf(types[0].type.name);
-  let indexOfSecondType = undefined;
-
-  if (types[1]) {
-    indexOfSecondType = onlyTypeNames.indexOf(types[1].type.name);
-  }
-
   return (
     <>
       <p>#{id}</p>
@@ -20,18 +9,22 @@ export const PokeInfo = ({ id, name, types }) => {
       <DivTypes>
         {types[0] && (
           <>
-            {indexOfFirstType !== -1 && (
-              <Type color={typesArray[indexOfFirstType].color}>
-                <TypeImg src={typesArray[indexOfFirstType].img} />
-                <TypeText>{types[0].type.name.charAt(0).toUpperCase() + types[0].type.name.slice(1)}</TypeText>
-              </Type>
-            )}
+            <Type color={objectTypes[types[0].type.name].color}>
+              <TypeImg src={objectTypes[types[0].type.name].img} />
+              <TypeText>
+                {types[0].type.name.charAt(0).toUpperCase() +
+                  types[0].type.name.slice(1)}
+              </TypeText>
+            </Type>
           </>
         )}
         {types[1] && (
-          <Type color={typesArray[indexOfSecondType].color}>
-            <TypeImg src={typesArray[indexOfSecondType].img} />
-            <TypeText>{types[1].type.name.charAt(0).toUpperCase() + types[1].type.name.slice(1)}</TypeText>
+          <Type color={objectTypes[types[1].type.name].color}>
+            <TypeImg src={objectTypes[types[1].type.name].img} />
+            <TypeText>
+              {types[1].type.name.charAt(0).toUpperCase() +
+                types[1].type.name.slice(1)}
+            </TypeText>
           </Type>
         )}
       </DivTypes>
