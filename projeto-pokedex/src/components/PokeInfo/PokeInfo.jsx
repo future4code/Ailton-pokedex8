@@ -1,11 +1,11 @@
-import { DivTypes, Type, TypeImg, TypeText,Id } from "./PokeInfoStyle";
+import { DivTypes, Type, TypeImg, TypeText,Id,Name } from "./PokeInfoStyle";
 import { objectTypes } from "../../global/types";
 
 export const PokeInfo = ({ id, name, types }) => {
   return (
     <>
-      <Id>#{id}</Id>
-      <h1>{name.charAt(0).toUpperCase() + name.slice(1)}</h1>
+      <Id>#0{id}</Id>
+      <Name>{name.charAt(0).toUpperCase() + name.slice(1)}</Name>
       <DivTypes>
         {types[0] && (
           <>

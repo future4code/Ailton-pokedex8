@@ -9,10 +9,12 @@ import {
   DivRobin,
   ImagePokemon,
   Button,
-  Details
+  Details,
+  Imagepokeground
 } from "./CardStyle";
 import { PokeInfo } from "../PokeInfo/PokeInfo";
 import { useNavigate } from "react-router-dom";
+import Pokeground from "../../images/pokeground.png";
 
 export const Card = ({ pokemon }) => {
   const navigate = useNavigate();
@@ -41,7 +43,7 @@ export const Card = ({ pokemon }) => {
                   />
                 )}
               </DetailsDiv>
-              <ImagePokemon></ImagePokemon>
+              <ImagePokemon src={pokemonDetail?.sprites.other[`official-artwork`].front_default}/> 
             </DivBatman>
             <DivRobin>
               <Details onClick={() => goTo(navigate, `/detail/${pokemonDetail.name}`)}>
@@ -50,6 +52,7 @@ export const Card = ({ pokemon }) => {
               <Button>Catupiri</Button>
             </DivRobin>
           </>
+          <Imagepokeground src={Pokeground}/>
         </Container>
       )}
     </>
