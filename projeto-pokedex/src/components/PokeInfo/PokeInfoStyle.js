@@ -4,6 +4,22 @@ export const DivTypes = styled.div`
 display:flex;
 gap: 7px;
 `
+export const Id = styled.p`
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 19px;
+  color: #ffffff;
+`;
+export const Name = styled.h1`
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 39px;
+  color: #ffffff;
+`;
 
 export const Type = styled.div `
 display: flex;
