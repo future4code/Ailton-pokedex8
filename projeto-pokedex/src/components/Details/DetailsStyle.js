@@ -155,7 +155,7 @@ border: 1px solid #C8C8C8;
 background-color: ${props=> props.color <25 && `#EF1700`};
 background-color: ${props=> props.color >=25 && props.color <50 && `#FF7C2D`};
 background-color: ${props=> props.color >=50 && `#FFDD6A`};
-background-color: ${props=> props.color >=100 && `#612B8A`};
+background-color: ${props=> props.color >=100 && `#916DAD`};
 `
 export const NameP = styled.p `
 width: 18%;
@@ -187,3 +187,8 @@ align-items: center;
 export const Teste = styled.div`
 width: 50%;
 `
+export const TitleMoves = styled.p`
+  font-family: "Poppins";
+  font-size: 24px;
+  font-weight: bolder;
+`;
