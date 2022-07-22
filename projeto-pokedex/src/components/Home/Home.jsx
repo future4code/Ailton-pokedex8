@@ -1,16 +1,12 @@
 import { HeaderComp } from "../Header/Header";
-import { useState, useEffect } from "react";
 import { Card } from "../Card/Card";
-import { ContainerGeral, Title } from "./HomeStyle";
+import { Button, ButtonsDiv, ContainerGeral, Title } from "./HomeStyle";
 import { useRequestData } from "../../hooks/useRequestData";
-import { ChangePage } from "../ChangePage/ChangePage";
 
 export const Home = () => {
-  const [page, setPage] = useState(0);
-  const pokemon = useRequestData(page * 24, 24);
-  const choosePage = () => {
-    setPage(page + 1);
-  };
+  const page = localStorage.getItem("pagina");
+  const { pokemon, setCurrentPageUrl, nextPageUrl, prevPageUrl } =
+    useRequestData();
   return (
     <>
       <HeaderComp showing1={false} showing2={true} />
@@ -19,7 +15,30 @@ export const Home = () => {
         {pokemon.results?.map(({ name }) => {
           return <Card key={name} pokemon={name} />;
         })}
-        <ChangePage />
+        <ButtonsDiv>
+          <Button onClick={() => setCurrentPageUrl(nextPageUrl)}>
+            Proxima pagina
+          </Button>
+          {Array.from({ length: 36 }).map((data, index) => {
+            return (
+              <Button
+                key={index}
+                onClick={() =>
+                  setCurrentPageUrl(
+                    `https://pokeapi.co/api/v2/pokemon/?offset=${
+                      index * 24
+                    }&limit=24`
+                  )
+                }
+              >
+                {index + 1}
+              </Button>
+            );
+          })}
+          <Button onClick={() => setCurrentPageUrl(prevPageUrl)}>
+            Pagina Anterior
+          </Button>
+        </ButtonsDiv>
       </ContainerGeral>
     </>
   );
