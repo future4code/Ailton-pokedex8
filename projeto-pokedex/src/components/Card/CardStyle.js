@@ -30,8 +30,31 @@ padding: 23px;
 `
 export const ImagePokemon= styled.img`
 `
-export const DivRobin= styled.div`
-justify-content:space-between;
-display:flex;
-padding: 7px;
+export const DivRobin = styled.div`
+  justify-content: space-between;
+  display: flex;
+  padding: 7px;
+  > p {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+  }
 `
+export const Button = styled.button`
+  font-family: "Poppins";
+  padding: 4px 10px;
+  width: 146px;
+  height: 38px;
+  background: #ffffff;
+  border-radius: 8px;
+  background-color: white;
+`
+export const Details = styled.p`
+  font-family: "Poppins";
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+  text-decoration-line: underline;
+  color: white;
+`;   
+  

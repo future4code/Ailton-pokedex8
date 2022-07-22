@@ -4,6 +4,10 @@ export const DivTypes = styled.div`
 display:flex;
 gap: 7px;
 `
+export const Id = styled.p`
+  font-weight: 700;
+  font-size: 16px;
+`
 
 export const Type = styled.div `
 display: flex;

@@ -8,6 +8,8 @@ import {
   DivBatman,
   DivRobin,
   ImagePokemon,
+  Button,
+  Details
 } from "./CardStyle";
 import { PokeInfo } from "../PokeInfo/PokeInfo";
 import { useNavigate } from "react-router-dom";
@@ -42,12 +44,10 @@ export const Card = ({ pokemon }) => {
               <ImagePokemon></ImagePokemon>
             </DivBatman>
             <DivRobin>
-              <p
-                onClick={() => goTo(navigate, `/detail/${pokemonDetail.name}`)}
-              >
+              <Details onClick={() => goTo(navigate, `/detail/${pokemonDetail.name}`)}>
                 Detalhes
-              </p>
-              <button>Catupiri</button>
+              </Details>
+              <Button>Catupiri</Button>
             </DivRobin>
           </>
         </Container>
