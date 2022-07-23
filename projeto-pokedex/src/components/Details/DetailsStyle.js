@@ -106,7 +106,7 @@ export const NameMovesDiv = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 22.5%;
+  width: 22.5%;  
   height: 100%;
   /* background-color: #FFFFFF; */
   z-index: 1;
@@ -118,10 +118,11 @@ export const NameDiv = styled.div`
 export const MovesDiv = styled.div`
   width: 100%;
   height: 76%;
+  max-height: 663px;
   background-color: #ffffff;
   padding: 18px 18px;
   border-radius: 8px;
-  /* overflow: auto; */
+  overflow: auto;
 `;
 export const PokeAbsolute = styled.img`
   width: 18.75vw;

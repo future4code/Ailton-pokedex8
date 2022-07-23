@@ -4,7 +4,7 @@ import { objectTypes } from "../../global/types";
 export const PokeInfo = ({ id, name, types }) => {
   return (
     <>
-      <Id>#0{id}</Id>
+      <Id>#{id}</Id>
       <Name>{name.charAt(0).toUpperCase() + name.slice(1)}</Name>
       <DivTypes>
         {types[0] && (

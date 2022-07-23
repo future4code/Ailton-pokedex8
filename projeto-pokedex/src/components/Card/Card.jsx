@@ -36,6 +36,14 @@ export const Card = ({ pokemonName }) => {
     setOwnPokemons([...ownPokemons, newPokemon]);
   };
 
+  const removePokemon = (rmvPokemon) => {
+    const newArr = [...ownPokemons]
+    const removedArr = newArr.filter(data=>{
+      return data.id !== rmvPokemon
+    })
+    setOwnPokemons(removedArr)
+  }
+
   return (
     <>
       {pokemonDetail && (
@@ -69,7 +77,9 @@ export const Card = ({ pokemonName }) => {
               .some((data) => {
                 return data === pokemonDetail.name;
               }) ?
-              <p>Capturado</p>
+              <Button color={"#bbb"} onClick={()=> removePokemon(pokemonDetail.id)}>
+                Remover
+              </Button>
               : (
               <Button onClick={() => capturePokemon(pokemonDetail)}>
                 Capturar!

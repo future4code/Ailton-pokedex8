@@ -8,7 +8,6 @@ export const useRequestData = () => {
   const [pokemon, setPokemon] = useState([]);
   const [nextPageUrl, setNextPageUrl] = useState();
   const [prevPageUrl, setPrevPageUrl] = useState();
-  const pageSplit = currentPageUrl?.split("=")
   const takePokemon = async () => {
     try {
       const res = await axios.get(currentPageUrl);

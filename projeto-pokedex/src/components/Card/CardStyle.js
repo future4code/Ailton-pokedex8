@@ -56,9 +56,10 @@ export const Button = styled.button`
   padding: 4px 10px;
   width: 146px;
   height: 38px;
-  background: #ffffff;
+  background: ${props=> props.color};
   border-radius: 8px;
-  border-color: #ffffff;
+  transition: 0.5s ease;
+  border: none;
   cursor: pointer;
 `;
 export const Details = styled.p`

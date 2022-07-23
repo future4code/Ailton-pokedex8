@@ -114,7 +114,6 @@ export const Details = () => {
                   </StatsDiv>
                 );
               })}
-
               <StatsDiv>
                 <NameP>Total</NameP>
                 <NumberPTotal>{totalStats}</NumberPTotal>
@@ -124,13 +123,9 @@ export const Details = () => {
           <Separator4></Separator4>
           <NameMovesDiv>
             <NameDiv></NameDiv>
-            <MovesDiv>            
+            <MovesDiv>
               <TitleMoves>Moves</TitleMoves>
-              {canShow && (
-                <button onClick={showHide}>
-                  Mostrar menos
-                </button>
-              )}
+              {canShow && <button onClick={showHide}>Mostrar menos</button>}
               {canShow || (
                 <button onClick={showHide}>
                   Mostrar mais ({pokemonDetail?.moves.length})
@@ -168,7 +163,7 @@ export const Details = () => {
                     </MovesCardContainer>
                   );
                 }
-              })}              
+              })}
             </MovesDiv>
           </NameMovesDiv>
           <PokeAbsolute
