@@ -5,6 +5,7 @@ import { HeaderComp } from "../Header/Header";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import { baseUrl } from "../../constants/url";
+import { PokeInfo } from "../PokeInfo/PokeInfo";
 import {
   TitleMoves,
   H1Style,
@@ -150,6 +151,7 @@ export const Details = () => {
           <PokeballAbsolute src={CardBackground} />
         </Card>
       </ContainerGeral>
+      
     </>
   );
 };
