@@ -11,13 +11,14 @@ export const Home = () => {
     <>
       <HeaderComp showing1={false} showing2={true} />
       <ContainerGeral>
+        {console.log(page)}
         <Title>Todos os Pokemons</Title>
         {pokemon.results?.map(({ name }) => {
           return <Card key={name} pokemon={name} />;
         })}
         <ButtonsDiv>
-          <Button onClick={() => setCurrentPageUrl(nextPageUrl)}>
-            Proxima pagina
+          <Button onClick={() => setCurrentPageUrl(prevPageUrl)}>
+            Página Anterior
           </Button>
           {Array.from({ length: 36 }).map((data, index) => {
             return (
@@ -35,8 +36,8 @@ export const Home = () => {
               </Button>
             );
           })}
-          <Button onClick={() => setCurrentPageUrl(prevPageUrl)}>
-            Pagina Anterior
+          <Button onClick={() => setCurrentPageUrl(nextPageUrl)}>
+            Próxima Pagina
           </Button>
         </ButtonsDiv>
       </ContainerGeral>

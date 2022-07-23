@@ -34,6 +34,10 @@ export const ButtonsDiv = styled.div`
   height: 100%;
   justify-content: center;
   padding: 12px 0px;
+  flex-wrap: wrap;
+  @media only screen and (max-width: 480px) {
+    /* flex-wrap: wrap; */
+  }
 `;
 
 export const Button = styled.button`

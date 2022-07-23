@@ -14,6 +14,7 @@ export const useRequestData = () => {
       setNextPageUrl(res.data.next);
       setPrevPageUrl(res.data.previous);
       setPokemon(res.data);
+      localStorage.setItem("pagina", currentPageUrl)
     } catch (error) {
       alert("Algo deu errado");
     }

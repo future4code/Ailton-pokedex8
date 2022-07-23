@@ -36,6 +36,7 @@ export const ImagePokemon = styled.img`
   position: absolute;
   top: -45%;
   left: 54%;
+  z-index: 1;
 `;
 export const DivRobin = styled.div`
   justify-content: space-between;
@@ -73,4 +74,5 @@ export const Imagepokeground = styled.img`
   height: 210px;
   right: 0%;
   top:0%;
+  z-index: 0;
 `;
