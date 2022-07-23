@@ -21,15 +21,19 @@ import {
   PokeAbsolute,
   TitleBaseStats,
   NameDiv,
+  DivTeste,
   Separator1,
   Separator4,
   Separator2,
   Separator3,
+  Separator6,
+  MovesCardContainer,
   NameMovesDiv,
   StatsContainer,
   PokePicsBack,
   PokePicsFront,
   PicDiv,
+  MovesCard,
   Card,
   ContainerGeral,
 } from "./DetailsStyle";
@@ -122,7 +126,21 @@ export const Details = () => {
             <MovesDiv>
               <TitleMoves>Moves</TitleMoves>
               {pokemonDetail?.moves.map((data, i) => {
-                return <div key={i}>{i < 10 && <p>{data.move.name}</p>}</div>;
+                return (
+                  <MovesCardContainer key={i}>
+                    {i < 5 && (
+                      <>
+                        <Separator6 />
+                        <DivTeste>
+                          <MovesCard>
+                            {data.move.name.charAt(0).toUpperCase() +
+                              data.move.name.slice(1)}
+                          </MovesCard>
+                        </DivTeste>
+                      </>
+                    )}
+                  </MovesCardContainer>
+                );
               })}
             </MovesDiv>
           </NameMovesDiv>
