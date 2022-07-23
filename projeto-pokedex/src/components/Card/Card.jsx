@@ -44,6 +44,14 @@ export const Card = ({ pokemonName }) => {
     setOwnPokemons(removedArr)
   }
 
+
+  const sizesInfoCard = {
+    idSize: { fontSize: 16 },
+    nameSize: { fontSize: 32 },
+    typeSize: { height: 31 },
+    typeImgSize: { width: 16 },
+  }; 
+
   return (
     <>
       {pokemonDetail && (
@@ -52,6 +60,7 @@ export const Card = ({ pokemonName }) => {
             <DetailsDiv>
               {pokemonDetail && (
                 <PokeInfo
+                  size={sizesInfoCard}
                   id={pokemonDetail.id}
                   name={pokemonDetail.name}
                   types={pokemonDetail.types}

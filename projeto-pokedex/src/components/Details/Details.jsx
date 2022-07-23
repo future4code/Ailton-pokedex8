@@ -3,6 +3,7 @@ import { HeaderComp } from "../Header/Header";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import { baseUrl } from "../../constants/url";
+import { PokeInfo } from "../PokeInfo/PokeInfo";
 import {
   TitleMoves,
   H1Style,
@@ -68,7 +69,7 @@ export const Details = () => {
   const showHide = () => {
     setCanShow(!canShow);
   };
-  // console.log(pokemonDetail);
+  console.log(pokemonDetail);
 
   return (
     <>
@@ -123,6 +124,15 @@ export const Details = () => {
           <Separator4></Separator4>
           <NameMovesDiv>
             <NameDiv></NameDiv>
+            <NameDiv>
+              {pokemonDetail && (
+                <PokeInfo
+                  id={pokemonDetail.id}
+                  name={pokemonDetail.name}
+                  types={pokemonDetail.types}
+                />
+              )}
+            </NameDiv>
             <MovesDiv>
               <TitleMoves>Moves</TitleMoves>
               {canShow && <button onClick={showHide}>Mostrar menos</button>}

@@ -1,5 +1,6 @@
 import styled from "styled-components";
 
+
 export const DivTypes = styled.div`
 display:flex;
 gap: 7px;
@@ -8,7 +9,8 @@ export const Id = styled.p`
   font-family: "Inter";
   font-style: normal;
   font-weight: 700;
-  font-size: 16px;
+  /* background-color: ${(props) => props.color < 25 && `#EF1700`}; */
+  font-size: ${(props) => props.size.fontSize}px;
   line-height: 19px;
   color: #ffffff;
 `;
@@ -16,7 +18,7 @@ export const Name = styled.h1`
   font-family: "Inter";
   font-style: normal;
   font-weight: 700;
-  font-size: 32px;
+  font-size: ${(props) => props.biluteteia.fontSize}px;
   line-height: 39px;
   color: #ffffff;
 `;
