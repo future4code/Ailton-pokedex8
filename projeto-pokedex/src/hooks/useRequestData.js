@@ -1,20 +1,21 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 export const useRequestData = () => {
+  const page = localStorage.getItem("pagina");
+  const [currentPageUrl, setCurrentPageUrl] = useState(page);
   const [pokemon, setPokemon] = useState([]);
-  const [currentPageUrl, setCurrentPageUrl] = useState(
-    "https://pokeapi.co/api/v2/pokemon/?offset=0&limit=24"
-  );
   const [nextPageUrl, setNextPageUrl] = useState();
   const [prevPageUrl, setPrevPageUrl] = useState();
+  const pageSplit = currentPageUrl?.split("=")
   const takePokemon = async () => {
     try {
       const res = await axios.get(currentPageUrl);
       setNextPageUrl(res.data.next);
       setPrevPageUrl(res.data.previous);
       setPokemon(res.data);
-      localStorage.setItem("pagina", currentPageUrl)
+      localStorage.setItem("pagina", currentPageUrl);
     } catch (error) {
       alert("Algo deu errado");
     }
@@ -22,5 +23,5 @@ export const useRequestData = () => {
   useEffect(() => {
     takePokemon(currentPageUrl);
   }, [currentPageUrl]);
-  return { pokemon, setCurrentPageUrl, nextPageUrl, prevPageUrl };
+  return { pokemon, setCurrentPageUrl, nextPageUrl, prevPageUrl, currentPageUrl };
 };

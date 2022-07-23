@@ -103,6 +103,9 @@ export const TitleBaseStats = styled.p`
 `;
 
 export const NameMovesDiv = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   width: 22.5%;
   height: 100%;
   /* background-color: #FFFFFF; */
@@ -114,10 +117,11 @@ export const NameDiv = styled.div`
 `;
 export const MovesDiv = styled.div`
   width: 100%;
-  height: 73.9%;
+  height: 76%;
   background-color: #ffffff;
   padding: 18px 18px;
   border-radius: 8px;
+  /* overflow: auto; */
 `;
 export const PokeAbsolute = styled.img`
   width: 18.75vw;
@@ -136,7 +140,6 @@ export const Stats = styled.div`
   display: flex;
   flex-direction: column;
   gap: 10px;
-  /* background-color: red; */
 `;
 export const StatsDiv = styled.div`
   display: flex;

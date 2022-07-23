@@ -23,7 +23,7 @@ export const Name = styled.h1`
 
 export const Type = styled.div `
 display: flex;
-width: 106px;
+width: fit-content;
 height: 31px;
 gap: 17px;
 padding: 5px 8px;
@@ -39,7 +39,7 @@ transition: 0.2s ease;
 `
 
 export const TypeImg = styled.img`
-width: 20px;
+width: 16px;
 `
 
 export const TypeText = styled.p`

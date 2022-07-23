@@ -1,10 +1,13 @@
-import styled from "styled-components"
+import styled from "styled-components";
 
 export const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   width: 440px;
   height: 210px;
   border-radius: 12px;
-  margin-bottom: 45px;
+  margin-bottom: 38px;
   position: relative;
   background: ${(props) => props.color === `poison` && "#896a8a"};
   background: ${(props) => props.color === `grass` && "#729F92"};
@@ -23,14 +26,14 @@ export const Container = styled.div`
   background: ${(props) => props.color === `ice` && "#17806e"};
   background: ${(props) => props.color === `psychic` && "#7a4b4c"};
   background: ${(props) => props.color === `rock` && "#6b5f3e"};
-  background: ${(props) => props.color === `steel` && "#636363"};  
+  background: ${(props) => props.color === `steel` && "#636363"};
 `;
-export const DivBatman= styled.div`
-position: relative;
-z-index: 2;
+export const DivBatman = styled.div`
+  position: relative;
+  z-index: 2;
 `;
-export const DetailsDiv= styled.div`
-padding: 23px;
+export const DetailsDiv = styled.div`
+  padding: 23px;
 `;
 export const ImagePokemon = styled.img`
   width: 193px;
@@ -43,14 +46,10 @@ export const DivRobin = styled.div`
   justify-content: space-between;
   display: flex;
   padding: 7px;
-  > p {
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 24px;
-  }
-  margin-left: 23px;
-  align-items: flex-end;
+  padding: 0px 23px;
+  align-items: center;
   z-index: 2;
+  height: 100%;
 `;
 export const Button = styled.button`
   font-family: "Poppins";
@@ -60,7 +59,7 @@ export const Button = styled.button`
   background: #ffffff;
   border-radius: 8px;
   border-color: #ffffff;
-  /* background-color: white; */
+  cursor: pointer;
 `;
 export const Details = styled.p`
   font-family: "Poppins";
@@ -69,12 +68,17 @@ export const Details = styled.p`
   line-height: 24px;
   text-decoration-line: underline;
   color: white;
-`;  
+  cursor: pointer;
+  transition: 0.5s ease;
+  :hover {
+    color: #ccc;
+  }
+`;
 export const Imagepokeground = styled.img`
   /* width: 210px; */
   position: absolute;
   height: 210px;
   right: 0%;
-  top:0%;
+  top: 0%;
   z-index: 1;
 `;
