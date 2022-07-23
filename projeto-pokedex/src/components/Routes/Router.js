@@ -11,6 +11,14 @@ export const Router = () => {
   const [ownPokemons, setOwnPokemons] = useState([]);
   const { pokemon, currentPageUrl, setCurrentPageUrl, nextPageUrl, prevPageUrl } =
     useRequestData();
+
+    
+    // const sizesInfoDetail = {
+    // id: { fontSize: 16 },
+    // name: { fontSize: 32 },
+    // type: { height: 31 },
+    // typeImg: { width: 16 },
+   
   const pokemonProp = {
     pokemon,
     currentPageUrl,
