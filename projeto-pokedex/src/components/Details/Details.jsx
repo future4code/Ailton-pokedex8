@@ -1,11 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { goTo } from "../../Functions/goTo";
 import { HeaderComp } from "../Header/Header";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import { baseUrl } from "../../constants/url";
-import { PokeInfo } from "../PokeInfo/PokeInfo";
 import {
   TitleMoves,
   H1Style,
@@ -42,7 +39,7 @@ import CardBackground from "../../images/cardbackgroundpoke2.png";
 
 export const Details = () => {
   const { name } = useParams();
-  const navigate = useNavigate();
+  const [canShow, setCanShow] = useState(false);
   const [pokemonDetail, setPokemonDetail] = useState();
 
   const getDetail = async () => {
@@ -68,6 +65,9 @@ export const Details = () => {
     return Math.max(a, b);
   });
 
+  const showHide = () => {
+    setCanShow(!canShow);
+  };
   // console.log(pokemonDetail);
 
   return (
@@ -124,25 +124,51 @@ export const Details = () => {
           <Separator4></Separator4>
           <NameMovesDiv>
             <NameDiv></NameDiv>
-            <MovesDiv>
+            <MovesDiv>            
               <TitleMoves>Moves</TitleMoves>
+              {canShow && (
+                <button onClick={showHide}>
+                  Mostrar menos
+                </button>
+              )}
+              {canShow || (
+                <button onClick={showHide}>
+                  Mostrar mais ({pokemonDetail?.moves.length})
+                </button>
+              )}
               {pokemonDetail?.moves.map((data, i) => {
-                return (
-                  <MovesCardContainer key={i}>
-                    {i < 5 && (
+                if (canShow) {
+                  return (
+                    <MovesCardContainer key={i}>
                       <>
                         <Separator6 />
                         <DivTeste>
                           <MovesCard>
                             {data.move.name.charAt(0).toUpperCase() +
-                              data.move.name.slice(1)}
+                              data.move.name.slice(1).replace("-", " ")}
                           </MovesCard>
                         </DivTeste>
                       </>
-                    )}
-                  </MovesCardContainer>
-                );
-              })}
+                    </MovesCardContainer>
+                  );
+                } else {
+                  return (
+                    <MovesCardContainer key={i}>
+                      {i < 5 && (
+                        <>
+                          <Separator6 />
+                          <DivTeste>
+                            <MovesCard>
+                              {data.move.name.charAt(0).toUpperCase() +
+                                data.move.name.slice(1).replace("-", " ")}
+                            </MovesCard>
+                          </DivTeste>
+                        </>
+                      )}
+                    </MovesCardContainer>
+                  );
+                }
+              })}              
             </MovesDiv>
           </NameMovesDiv>
           <PokeAbsolute
@@ -151,7 +177,6 @@ export const Details = () => {
           <PokeballAbsolute src={CardBackground} />
         </Card>
       </ContainerGeral>
-      
     </>
   );
 };

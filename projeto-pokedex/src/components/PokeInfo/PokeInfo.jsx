@@ -1,4 +1,4 @@
-import { DivTypes, Type, TypeImg, TypeText,Id,Name } from "./PokeInfoStyle";
+import { DivTypes, Type, TypeImg, TypeText, Id, Name } from "./PokeInfoStyle";
 import { objectTypes } from "../../global/types";
 
 export const PokeInfo = ({ id, name, types }) => {

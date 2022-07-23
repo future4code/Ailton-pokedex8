@@ -11,8 +11,6 @@ import PokeLogo from "../../images/pokelogo.png";
 import { goTo } from "../../Functions/goTo";
 import { useNavigate } from "react-router-dom";
 
-//showingAllButtons={true} showingAddButton={false}
-
 export const HeaderComp = (props) => {
   const { showing1, showing2 } = props;
   const navigate = useNavigate();
