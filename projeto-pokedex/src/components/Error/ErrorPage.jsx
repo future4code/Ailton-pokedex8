@@ -1,24 +1,30 @@
 import React from 'react'
-import { Container, DivError } from './StyleErrorPage'
+import { Container, DivError,Button } from './StyleErrorPage'
 import { goTo } from '../../Functions/goTo'
 import { useNavigate } from 'react-router-dom'
+import { HeaderComp } from "../Header/Header";
+
 
 export const ErrorPage = () => {
     const navigate = useNavigate();
 
   return (
+    <>  
+    <HeaderComp showing1={false} showing2={false} />
     <Container> 
     <DivError> 
         <p font- >ERROR</p>
         <p>404</p>
         <p>PAGE NOT FOUND</p>
-        <button onClick={() => goTo(navigate, "/")}>{">>>>>>>>>>>>Voltar<<<<<<<<<<<<<<"}</button>
+        <Button onClick={() => goTo(navigate, "/")}>{">>>>>>>>>>>>Voltar<<<<<<<<<<<<<<"}</Button>
     </DivError>
     <div>
       
     </div>
-        <iframe width="1280" height="736" src="https://www.youtube.com/embed/-5PR8AdwC8o" title="Pukemon filme Nal do Canal" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe width="580" height="336" src="https://www.youtube.com/embed/-5PR8AdwC8o" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </Container>
+    </>
+   
    
   )
 }
