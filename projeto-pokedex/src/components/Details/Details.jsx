@@ -5,6 +5,7 @@ import { HeaderComp } from "../Header/Header";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import { baseUrl } from "../../constants/url";
+import { PokeInfo } from "../PokeInfo/PokeInfo";
 import {
   TitleMoves,
   H1Style,
@@ -21,15 +22,19 @@ import {
   PokeAbsolute,
   TitleBaseStats,
   NameDiv,
+  DivTeste,
   Separator1,
   Separator4,
   Separator2,
   Separator3,
+  Separator6,
+  MovesCardContainer,
   NameMovesDiv,
   StatsContainer,
   PokePicsBack,
   PokePicsFront,
   PicDiv,
+  MovesCard,
   Card,
   ContainerGeral,
 } from "./DetailsStyle";
@@ -71,7 +76,7 @@ export const Details = () => {
       <ContainerGeral>
         <H1Style>{`Detalhes`}</H1Style>
         <Separator1></Separator1>
-        <Card>
+        <Card color={pokemonDetail?.types[0].type.name}>
           <PicDiv>
             {pokemonDetail && (
               <PokePicsFront src={pokemonDetail?.sprites.front_default} />
@@ -122,7 +127,21 @@ export const Details = () => {
             <MovesDiv>
               <TitleMoves>Moves</TitleMoves>
               {pokemonDetail?.moves.map((data, i) => {
-                return <div key={i}>{i < 10 && <p>{data.move.name}</p>}</div>;
+                return (
+                  <MovesCardContainer key={i}>
+                    {i < 5 && (
+                      <>
+                        <Separator6 />
+                        <DivTeste>
+                          <MovesCard>
+                            {data.move.name.charAt(0).toUpperCase() +
+                              data.move.name.slice(1)}
+                          </MovesCard>
+                        </DivTeste>
+                      </>
+                    )}
+                  </MovesCardContainer>
+                );
               })}
             </MovesDiv>
           </NameMovesDiv>
@@ -132,6 +151,7 @@ export const Details = () => {
           <PokeballAbsolute src={CardBackground} />
         </Card>
       </ContainerGeral>
+      
     </>
   );
 };

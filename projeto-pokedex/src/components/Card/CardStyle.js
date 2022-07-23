@@ -27,6 +27,7 @@ export const Container = styled.div`
 `;
 export const DivBatman= styled.div`
 position: relative;
+z-index: 2;
 `;
 export const DetailsDiv= styled.div`
 padding: 23px;
@@ -36,7 +37,7 @@ export const ImagePokemon = styled.img`
   position: absolute;
   top: -45%;
   left: 54%;
-  z-index: 1;
+  z-index: 2;
 `;
 export const DivRobin = styled.div`
   justify-content: space-between;
@@ -47,8 +48,9 @@ export const DivRobin = styled.div`
     font-size: 16px;
     line-height: 24px;
   }
-  margin-left:23px;
+  margin-left: 23px;
   align-items: flex-end;
+  z-index: 2;
 `;
 export const Button = styled.button`
   font-family: "Poppins";
@@ -74,5 +76,5 @@ export const Imagepokeground = styled.img`
   height: 210px;
   right: 0%;
   top:0%;
-  z-index: 0;
+  z-index: 1;
 `;

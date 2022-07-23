@@ -20,7 +20,7 @@ export const Home = () => {
           <Button onClick={() => setCurrentPageUrl(prevPageUrl)}>
             Página Anterior
           </Button>
-          {Array.from({ length: 36 }).map((data, index) => {
+          {Array.from({ length: 37}).map((data, index) => {
             return (
               <Button
                 key={index}

@@ -16,7 +16,7 @@ width: 30%;
 export const AllPokemons = styled.p`
 display: flex;
 justify-content: center;
-width: 100%;
+width: 200px;
 font-size: 2rem;
 font-family: "Poppins";
 font-weight: 500;
