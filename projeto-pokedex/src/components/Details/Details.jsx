@@ -71,7 +71,7 @@ export const Details = () => {
       <ContainerGeral>
         <H1Style>{`Detalhes`}</H1Style>
         <Separator1></Separator1>
-        <Card>
+        <Card color={pokemonDetail?.types[0].type.name}>
           <PicDiv>
             {pokemonDetail && (
               <PokePicsFront src={pokemonDetail?.sprites.front_default} />

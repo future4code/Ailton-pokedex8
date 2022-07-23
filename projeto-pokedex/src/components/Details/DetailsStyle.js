@@ -42,22 +42,32 @@ display: flex;
 align-items: start;
 /* background-color: #FFFFFF; */
 `
-export const Card = styled.div `
-
-width: 100%;
-
-background-color: #729F92;
-/* background-image: url(${CardBackground});
-background-repeat: no-repeat;
-background-size: 66% 132% ;
-background-position: 129% 43.5%; */
-border-radius: 40px;
-display: flex;
-align-items: center;
-padding: 26px 44px; 
-position: relative;
-
-`
+export const Card = styled.div`
+  width: 100%;
+  background: ${(props) => props.color === `poison` && "#896a8a"};
+  background: ${(props) => props.color === `grass` && "#729F92"};
+  background: ${(props) => props.color === `fire` && "#EAAB7D"};
+  background: ${(props) => props.color === `water` && "#71C3FF"};
+  background: ${(props) => props.color === `flying` && "#677b8a"};
+  background: ${(props) => props.color === `bug` && "#76A866"};
+  background: ${(props) => props.color === `normal` && "#BF9762"};
+  background: ${(props) => props.color === `dark` && "#2c2b2e"};
+  background: ${(props) => props.color === `dragon` && "#004170"};
+  background: ${(props) => props.color === `electric` && "#b09727"};
+  background: ${(props) => props.color === `fairy` && "#a3649f"};
+  background: ${(props) => props.color === `fighting` && "#945165"};
+  background: ${(props) => props.color === `ghost` && "#515c7d"};
+  background: ${(props) => props.color === `ground` && "#7d3916"};
+  background: ${(props) => props.color === `ice` && "#17806e"};
+  background: ${(props) => props.color === `psychic` && "#7a4b4c"};
+  background: ${(props) => props.color === `rock` && "#6b5f3e"};
+  background: ${(props) => props.color === `steel` && "#636363"};
+  border-radius: 40px;
+  display: flex;
+  align-items: center;
+  padding: 26px 44px;
+  position: relative;
+`;
 export const PicDiv = styled.div`
 
 width: 21.66%;
