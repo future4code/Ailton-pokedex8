@@ -49,7 +49,7 @@ export const Card = ({ pokemon }) => {
               <Details onClick={() => goTo(navigate, `/detail/${pokemonDetail.name}`)}>
                 Detalhes
               </Details>
-              <Button>Catupiri</Button>
+              <Button>Capiturar!</Button>
             </DivRobin>
           </>
           <Imagepokeground src={Pokeground}/>

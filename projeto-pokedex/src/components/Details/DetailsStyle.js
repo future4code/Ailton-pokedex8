@@ -21,44 +21,6 @@ export const Separator6 = styled.div`
 height: 20px;
 `
 
-export const ContainerGeral = styled.div`
-  width: 100%;
-  height: 120vh;
-  display: flex;
-  flex: 1;
-  justify-content: center;
-  align-items: center;
-  background-color: grey;
-  display: flex;
-  flex-direction: column;
-  /* justify-content: space-between; */
-  padding: 60px 25px;
-`;
-export const H1Style = styled.p`
-  width: 100%;
-  font-family: "Poppins";
-  font-size: 48px;
-  font-weight: normal;
-  /* line-height: 72px; */
-  color: #ffffff;
-  display: flex;
-  align-items: start;
-  /* background-color: #FFFFFF; */
-`;
-export const Card = styled.div`
-  width: 100%;
-
-  background-color: #729f92;
-  /* background-image: url(${CardBackground});
-background-repeat: no-repeat;
-background-size: 66% 132% ;
-background-position: 129% 43.5%; */
-  border-radius: 40px;
-  display: flex;
-  align-items: center;
-  padding: 26px 44px;
-  position: relative;
-`;
 export const PicDiv = styled.div`
   width: 21.66%;
   height: 100%;

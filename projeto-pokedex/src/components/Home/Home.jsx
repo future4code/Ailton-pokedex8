@@ -16,10 +16,10 @@ export const Home = () => {
           return <Card key={name} pokemon={name} />;
         })}
         <ButtonsDiv>
-          <Button onClick={() => setCurrentPageUrl(nextPageUrl)}>
-            Proxima pagina
+          <Button onClick={() => setCurrentPageUrl(prevPageUrl)}>
+            Pagina Anterior
           </Button>
-          {Array.from({ length: 36 }).map((data, index) => {
+          {Array.from({ length: 37}).map((data, index) => {
             return (
               <Button
                 key={index}
@@ -35,8 +35,8 @@ export const Home = () => {
               </Button>
             );
           })}
-          <Button onClick={() => setCurrentPageUrl(prevPageUrl)}>
-            Pagina Anterior
+          <Button onClick={() => setCurrentPageUrl(nextPageUrl)}>
+            Proxima pagina
           </Button>
         </ButtonsDiv>
       </ContainerGeral>
