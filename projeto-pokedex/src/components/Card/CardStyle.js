@@ -31,7 +31,7 @@ export const Container = styled.div`
     width: 320px;
   }
   @media (max-width: 719px) {
-    width: 80%;
+    /* width: 80%; */
   }
 `;
 export const DivBatman = styled.div`
@@ -48,16 +48,21 @@ export const ImagePokemon = styled.img`
   left: 54%;
   z-index: 2;
   transition: 0.25s ease;
-  :hover {
-    width: 210px;
+  @media (min-width: 1000px) {
+    top: -30%;
+    width: 140px;
+    :hover {
+      width: 210px;
+    }
   }
+
   @media (min-width: 720px) and (max-width: 950px) {
-    top:  -30%;
+    top: -30%;
     width: 140px;
   }
   @media (max-width: 719px) {
     width: 170px;
-    top:  -30%;
+    top: -30%;
   }
 `;
 export const DivRobin = styled.div`
@@ -104,3 +109,4 @@ export const Imagepokeground = styled.img`
   top: 0%;
   z-index: 1;
 `;
+

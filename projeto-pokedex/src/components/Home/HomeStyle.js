@@ -20,6 +20,7 @@ export const H1Style = styled.p`
   color: #ffffff;
   display: flex;
   align-items: start;
+  
 `;
 
 export const Title = styled.h1`
@@ -28,6 +29,9 @@ export const Title = styled.h1`
   color: white;
   width: 100%;
   padding-bottom: 35px;
+  @media (max-width: 950px) {
+    font-size: 2rem;
+  }
 `;
 
 export const Loading = styled.h1`
