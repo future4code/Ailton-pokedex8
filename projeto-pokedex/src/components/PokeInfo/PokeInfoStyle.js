@@ -10,15 +10,16 @@ export const Id = styled.p`
   font-style: normal;
   font-weight: 700;
   /* background-color: ${(props) => props.color < 25 && `#EF1700`}; */
-  font-size: ${(props) => props.size.fontSize}px;
+  font-size: 16px;
   line-height: 19px;
   color: #ffffff;
 `;
 export const Name = styled.h1`
   font-family: "Inter";
+  margin-top: 5px;
   font-style: normal;
   font-weight: 700;
-  font-size: ${(props) => props.biluteteia.fontSize}px;
+  font-size: ${(props) => props.size.fontSize}px;
   line-height: 39px;
   color: #ffffff;
 `;
@@ -26,8 +27,9 @@ export const Name = styled.h1`
 export const Type = styled.div `
 display: flex;
 width: fit-content;
+margin-top: 20px;
 height: 31px;
-gap: 17px;
+gap : 17px;
 padding: 5px 8px;
 align-items: center;
 background-color: ${props=> props.color};

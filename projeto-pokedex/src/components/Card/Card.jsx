@@ -45,10 +45,7 @@ export const Card = ({ pokemonName }) => {
   };
 
   const sizesInfoCard = {
-    idSize: { fontSize: 16 },
     nameSize: { fontSize: 32 },
-    typeSize: { height: 31 },
-    typeImgSize: { width: 16 },
   };
 
   return (
