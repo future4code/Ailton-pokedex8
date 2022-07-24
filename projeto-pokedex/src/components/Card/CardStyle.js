@@ -41,6 +41,10 @@ export const ImagePokemon = styled.img`
   top: -45%;
   left: 54%;
   z-index: 2;
+  transition: 0.25s ease;
+  :hover {
+    width: 210px;
+  }
 `;
 export const DivRobin = styled.div`
   justify-content: space-between;
@@ -61,6 +65,9 @@ export const Button = styled.button`
   transition: 0.5s ease;
   border: none;
   cursor: pointer;
+  :hover {
+    width: 160px;
+  }
 `;
 export const Details = styled.p`
   font-family: "Poppins";
