@@ -9,6 +9,7 @@ export const PokeInfo = ({ id, name, types, size }) => {
     <>
       <Id size={size.idSize}>#0{id}</Id>
       <Name biluteteia={size.nameSize}>{name.charAt(0).toUpperCase() + name.slice(1)}</Name>
+
       <DivTypes>
         {types[0] && (
           <>

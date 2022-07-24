@@ -36,6 +36,14 @@ export const Card = ({ pokemonName }) => {
     setOwnPokemons([...ownPokemons, newPokemon]);
   };
 
+  const removePokemon = (rmvPokemon) => {
+    const newArr = [...ownPokemons]
+    const removedArr = newArr.filter(data=>{
+      return data.id !== rmvPokemon
+    })
+    setOwnPokemons(removedArr)
+  }
+
 
   const sizesInfoCard = {
     idSize: { fontSize: 16 },
@@ -43,7 +51,7 @@ export const Card = ({ pokemonName }) => {
     typeSize: { height: 31 },
     typeImgSize: { width: 16 },
   }; 
-  
+
   return (
     <>
       {pokemonDetail && (
@@ -78,7 +86,9 @@ export const Card = ({ pokemonName }) => {
               .some((data) => {
                 return data === pokemonDetail.name;
               }) ?
-              <p>Capturado</p>
+              <Button color={"#bbb"} onClick={()=> removePokemon(pokemonDetail.id)}>
+                Remover
+              </Button>
               : (
               <Button onClick={() => capturePokemon(pokemonDetail)}>
                 Capturar!

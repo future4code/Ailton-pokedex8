@@ -115,7 +115,6 @@ export const Details = () => {
                   </StatsDiv>
                 );
               })}
-
               <StatsDiv>
                 <NameP>Total</NameP>
                 <NumberPTotal>{totalStats}</NumberPTotal>
@@ -124,6 +123,7 @@ export const Details = () => {
           </StatsContainer>
           <Separator4></Separator4>
           <NameMovesDiv>
+            <NameDiv></NameDiv>
             <NameDiv>
               {pokemonDetail && (
                 <PokeInfo
