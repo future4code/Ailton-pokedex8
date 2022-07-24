@@ -35,6 +35,7 @@ import {
   MovesCard,
   Card,
   ContainerGeral,
+  ShowMoreButton,
 } from "./DetailsStyle";
 import CardBackground from "../../images/cardbackgroundpoke2.png";
 
@@ -73,10 +74,6 @@ export const Details = () => {
   const sizesInfoDetail = {
     nameSize: { fontSize: 48 },
   };
-
-  // const sentenceTreatment = () => {
-  //   console.log(pokemonDetail.moves.move.name)
-  // }
 
   return (
     <>
@@ -142,11 +139,11 @@ export const Details = () => {
             </NameDiv>
             <MovesDiv>
               <TitleMoves>Moves</TitleMoves>
-              {canShow && <button onClick={showHide}>Mostrar menos</button>}
+              {canShow && <ShowMoreButton onClick={showHide}>Mostrar menos</ShowMoreButton>}
               {canShow || (
-                <button onClick={showHide}>
+                <ShowMoreButton onClick={showHide}>
                   Mostrar mais ({pokemonDetail?.moves.length})
-                </button>
+                </ShowMoreButton>
               )}
               {pokemonDetail?.moves.map((data, i) => {
                 const words = data.move.name.split(`-`);

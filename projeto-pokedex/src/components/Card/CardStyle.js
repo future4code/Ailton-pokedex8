@@ -27,6 +27,12 @@ export const Container = styled.div`
   background: ${(props) => props.color === `psychic` && "#7a4b4c"};
   background: ${(props) => props.color === `rock` && "#6b5f3e"};
   background: ${(props) => props.color === `steel` && "#636363"};
+  @media (min-width: 720px) and (max-width: 950px) {
+    width: 320px;
+  }
+  @media (max-width: 719px) {
+    width: 80%;
+  }
 `;
 export const DivBatman = styled.div`
   position: relative;
@@ -44,6 +50,14 @@ export const ImagePokemon = styled.img`
   transition: 0.25s ease;
   :hover {
     width: 210px;
+  }
+  @media (min-width: 720px) and (max-width: 950px) {
+    top:  -30%;
+    width: 140px;
+  }
+  @media (max-width: 719px) {
+    width: 170px;
+    top:  -30%;
   }
 `;
 export const DivRobin = styled.div`

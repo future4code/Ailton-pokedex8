@@ -15,6 +15,8 @@ export const Router = () => {
     setCurrentPageUrl,
     nextPageUrl,
     prevPageUrl,
+    loading,
+    setLoading
   } = useRequestData();
 
   const pokemonProp = {
@@ -25,6 +27,8 @@ export const Router = () => {
     prevPageUrl,
     ownPokemons,
     setOwnPokemons,
+    loading,
+    setLoading
   };
   return (
     <BrowserRouter>
