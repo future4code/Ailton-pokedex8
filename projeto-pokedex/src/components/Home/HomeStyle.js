@@ -9,6 +9,7 @@ export const ContainerGeral = styled.div`
   background-color: #5e5e5e;
   padding: 60px 25px;
   gap: 20px;
+  transition: 3s ease;
 `;
 export const H1Style = styled.p`
   width: 100%;

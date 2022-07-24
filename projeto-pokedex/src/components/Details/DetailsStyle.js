@@ -1,6 +1,5 @@
 import styled from "styled-components";
 
-
 export const Separator1 = styled.div`
   height: 56px;
 `;
@@ -18,8 +17,8 @@ export const Separator5 = styled.div`
   height: 15px;
 `;
 export const Separator6 = styled.div`
-height: 20px;
-`
+  height: 20px;
+`;
 export const ContainerGeral = styled.div`
   width: 100%;
   height: 120vh;
@@ -30,7 +29,6 @@ export const ContainerGeral = styled.div`
   background-color: grey;
   display: flex;
   flex-direction: column;
-  /* justify-content: space-between; */
   padding: 60px 25px;
 `;
 export const H1Style = styled.p`
@@ -38,11 +36,9 @@ export const H1Style = styled.p`
   font-family: "Poppins";
   font-size: 48px;
   font-weight: normal;
-  /* line-height: 72px; */
   color: #ffffff;
   display: flex;
   align-items: start;
-  /* background-color: #FFFFFF; */
 `;
 export const Card = styled.div`
   width: 100%;
@@ -99,16 +95,14 @@ export const TitleBaseStats = styled.p`
   font-family: "Poppins";
   font-size: 24px;
   font-weight: bolder;
-  /* padding: ; */
 `;
 
 export const NameMovesDiv = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 22.5%;  
+  width: 22.5%;
   height: 100%;
-  /* background-color: #FFFFFF; */
   z-index: 1;
 `;
 export const NameDiv = styled.div`
@@ -116,8 +110,6 @@ export const NameDiv = styled.div`
   height: 26.1%;
   display: flex;
   flex-direction: column;
-  /* gap: 15px; */
-  /* background-color: blue; */
 `;
 export const MovesDiv = styled.div`
   width: 100%;
@@ -127,6 +119,15 @@ export const MovesDiv = styled.div`
   padding: 18px 18px;
   border-radius: 8px;
   overflow: auto;
+  ::-webkit-scrollbar {
+    width: 12px;
+    border-radius: 0px 8px 8px 0px;
+    border: 1px solid #bbb;
+  }
+  ::-webkit-scrollbar-thumb {
+    border-radius: 8px;
+    background-color: #505050
+  }
 `;
 export const PokeAbsolute = styled.img`
   width: 18.75vw;
@@ -149,10 +150,7 @@ export const Stats = styled.div`
 export const StatsDiv = styled.div`
   display: flex;
   align-items: center;
-  /* height: 20%; */
   gap: 4.5%;
-  /* background-color: lightgreen; */
-  /* justify-content: space-between; */
 `;
 export const StatsBar = styled.div`
   width: ${(props) => props.size}%;
@@ -162,11 +160,6 @@ export const StatsBar = styled.div`
   align-items: center;
   border-radius: 3px;
   border: 1px solid #c8c8c8;
-  /* width: 65%;
-/* background-color: ${(props) =>
-    props.color < 50 ? `#FF7C2D` : `#FF5C5D`} ; */
-  /* background-color: ${(props) =>
-    props.color < 50 > 25 ? `#FFDD6A` : `#FF7C2D`}; */
   background-color: ${(props) => props.color < 25 && `#EF1700`};
   background-color: ${(props) =>
     props.color >= 25 && props.color < 50 && `#FF7C2D`};
@@ -180,7 +173,6 @@ export const NameP = styled.p`
   display: flex;
   justify-content: right;
   align-items: center;
-  /* background-color: red; */
 `;
 export const NumberP = styled.p`
   font-family: "Poppins";
@@ -189,7 +181,6 @@ export const NumberP = styled.p`
   justify-content: center;
   align-items: center;
   width: 10%;
-  /* font-weight: bold; */
 `;
 export const NumberPTotal = styled.p`
   font-family: "Poppins";
@@ -219,6 +210,22 @@ export const MovesCard = styled.div`
 export const MovesCardContainer = styled.div``;
 
 export const DivTeste = styled.div`
-width: 100%; 
-display: flex;
-`
+  width: 100%;
+  display: flex;
+`;
+
+export const ShowMoreButton = styled.button`
+  border: none;
+  padding: 10px;
+  background-color: #949494;
+  color: white;
+  font-family: "Montserrat";
+  border-radius: 12px;
+  font-size: 14px;
+  display: flex;
+  transition: 0.25s ease;
+  cursor: pointer;
+  :hover {
+    background-color: #505050;
+  }
+`;
