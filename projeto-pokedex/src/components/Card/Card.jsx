@@ -58,7 +58,7 @@ export const Card = ({ pokemonName }) => {
                 <PokeInfo
                   size={sizesInfoCard}
                   id={pokemonDetail.id}
-                  name={pokemonDetail.name}
+                  name={pokemonDetail.species.name}
                   types={pokemonDetail.types}
                 />
               )}
