@@ -114,6 +114,10 @@ export const NameMovesDiv = styled.div`
 export const NameDiv = styled.div`
   width: 100%;
   height: 26.1%;
+  display: flex;
+  flex-direction: column;
+  /* gap: 15px; */
+  /* background-color: blue; */
 `;
 export const MovesDiv = styled.div`
   width: 100%;
@@ -207,6 +211,7 @@ export const TitleMoves = styled.p`
 export const MovesCard = styled.div`
   padding: 10px;
   background-color: #ececec;
+  font-family: "Montserrat";
   border-radius: 12px;
   font-size: 14px;
   display: flex;

@@ -69,7 +69,14 @@ export const Details = () => {
   const showHide = () => {
     setCanShow(!canShow);
   };
-  console.log(pokemonDetail);
+
+  const sizesInfoDetail = {
+    nameSize: { fontSize: 48 },
+  };
+
+  // const sentenceTreatment = () => {
+  //   console.log(pokemonDetail.moves.move.name)
+  // }
 
   return (
     <>
@@ -123,10 +130,10 @@ export const Details = () => {
           </StatsContainer>
           <Separator4></Separator4>
           <NameMovesDiv>
-            <NameDiv></NameDiv>
             <NameDiv>
               {pokemonDetail && (
                 <PokeInfo
+                  size={sizesInfoDetail}
                   id={pokemonDetail.id}
                   name={pokemonDetail.name}
                   types={pokemonDetail.types}
@@ -142,6 +149,8 @@ export const Details = () => {
                 </button>
               )}
               {pokemonDetail?.moves.map((data, i) => {
+                const words = data.move.name.split(`-`);
+                console.log(words);
                 if (canShow) {
                   return (
                     <MovesCardContainer key={i}>
@@ -149,8 +158,13 @@ export const Details = () => {
                         <Separator6 />
                         <DivTeste>
                           <MovesCard>
-                            {data.move.name.charAt(0).toUpperCase() +
-                              data.move.name.slice(1).replace("-", " ")}
+                            {words.map((name, i) => {
+                              return (
+                                name.charAt(0).toUpperCase() +
+                                name.slice(1) +
+                                " "
+                              );
+                            })}
                           </MovesCard>
                         </DivTeste>
                       </>
@@ -164,8 +178,13 @@ export const Details = () => {
                           <Separator6 />
                           <DivTeste>
                             <MovesCard>
-                              {data.move.name.charAt(0).toUpperCase() +
-                                data.move.name.slice(1).replace("-", " ")}
+                              {words.map((name, i) => {
+                                return (
+                                  name.charAt(0).toUpperCase() +
+                                  name.slice(1) +
+                                  " "
+                                );
+                              })}
                             </MovesCard>
                           </DivTeste>
                         </>
