@@ -37,20 +37,19 @@ export const Card = ({ pokemonName }) => {
   };
 
   const removePokemon = (rmvPokemon) => {
-    const newArr = [...ownPokemons]
-    const removedArr = newArr.filter(data=>{
-      return data.id !== rmvPokemon
-    })
-    setOwnPokemons(removedArr)
-  }
-
+    const newArr = [...ownPokemons];
+    const removedArr = newArr.filter((data) => {
+      return data.id !== rmvPokemon;
+    });
+    setOwnPokemons(removedArr);
+  };
 
   const sizesInfoCard = {
     idSize: { fontSize: 16 },
     nameSize: { fontSize: 32 },
     typeSize: { height: 31 },
     typeImgSize: { width: 16 },
-  }; 
+  };
 
   return (
     <>
@@ -85,11 +84,14 @@ export const Card = ({ pokemonName }) => {
               })
               .some((data) => {
                 return data === pokemonDetail.name;
-              }) ?
-              <Button color={"#bbb"} onClick={()=> removePokemon(pokemonDetail.id)}>
+              }) ? (
+              <Button
+                color={"#bbb"}
+                onClick={() => removePokemon(pokemonDetail.id)}
+              >
                 Remover
               </Button>
-              : (
+            ) : (
               <Button onClick={() => capturePokemon(pokemonDetail)}>
                 Capturar!
               </Button>
