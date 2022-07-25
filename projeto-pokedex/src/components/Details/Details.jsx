@@ -9,7 +9,7 @@ import {
   H1Style,
   NameP,
   Separator5,
-  Teste,
+  StatsTotal,
   NumberPTotal,
   MovesDiv,
   Stats,
@@ -20,7 +20,7 @@ import {
   PokeAbsolute,
   TitleBaseStats,
   NameDiv,
-  DivTeste,
+  WidthMoves,
   Separator1,
   Separator4,
   Separator2,
@@ -94,7 +94,7 @@ export const Details = () => {
           <Separator3></Separator3>
           <StatsContainer>
             <TitleBaseStats>Base stats</TitleBaseStats>
-            <Separator5 />
+            <Separator5  />
             <Stats>
               {pokemonDetail?.stats.map((x, i) => {
                 return (
@@ -110,12 +110,12 @@ export const Details = () => {
                     {x.stat.name === "special-defense" && <NameP>Sp.Def</NameP>}
 
                     <NumberP>{x.base_stat}</NumberP>
-                    <Teste>
+                    <StatsTotal>
                       <StatsBar
                         color={x.base_stat}
                         size={x.base_stat / 2.55}
                       ></StatsBar>
-                    </Teste>
+                    </StatsTotal>
                   </StatsDiv>
                 );
               })}
@@ -153,7 +153,7 @@ export const Details = () => {
                     <MovesCardContainer key={i}>
                       <>
                         <Separator6 />
-                        <DivTeste>
+                        <WidthMoves>
                           <MovesCard>
                             {words.map((name, i) => {
                               return (
@@ -163,7 +163,7 @@ export const Details = () => {
                               );
                             })}
                           </MovesCard>
-                        </DivTeste>
+                        </WidthMoves>
                       </>
                     </MovesCardContainer>
                   );
@@ -173,7 +173,7 @@ export const Details = () => {
                       {i < 5 && (
                         <>
                           <Separator6 />
-                          <DivTeste>
+                          <WidthMoves>
                             <MovesCard>
                               {words.map((name, i) => {
                                 return (
@@ -183,7 +183,7 @@ export const Details = () => {
                                 );
                               })}
                             </MovesCard>
-                          </DivTeste>
+                          </WidthMoves>
                         </>
                       )}
                     </MovesCardContainer>

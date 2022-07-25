@@ -30,6 +30,12 @@ export const ContainerGeral = styled.div`
   display: flex;
   flex-direction: column;
   padding: 60px 25px;
+
+  @media screen and (max-width: 640px) {
+    /* flex-direction: column; */
+    height: 100%;
+ 
+  }
 `;
 export const H1Style = styled.p`
   width: 100%;
@@ -65,11 +71,23 @@ export const Card = styled.div`
   align-items: center;
   padding: 26px 44px;
   position: relative;
+  @media screen and (max-width: 640px) {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px 10px;
+    gap: 20px;
+
+  }
 `;
 
 export const PicDiv = styled.div`
   width: 21.66%;
   height: 100%;
+  @media screen and (max-width: 640px) {
+    order: 3;
+    width: 100%;
+    height: 100%;
+  }
 `;
 export const PokePicsFront = styled.img`
   width: 100%;
@@ -90,6 +108,12 @@ export const StatsContainer = styled.div`
   padding-top: 19px;
   border-radius: 12px;
   z-index: 1;
+  @media screen and (max-width: 640px) {
+    order: 4;
+    width: 100%;
+    padding: 20px 20px;
+    padding-bottom: 100px;
+  }
 `;
 export const TitleBaseStats = styled.p`
   font-family: "Poppins";
@@ -104,12 +128,21 @@ export const NameMovesDiv = styled.div`
   width: 22.5%;
   height: 100%;
   z-index: 1;
+  @media screen and (max-width: 640px) {
+    order: 2;
+    width: 100%;
+    height: 100%;
+    gap:20px;
+  }
 `;
 export const NameDiv = styled.div`
   width: 100%;
   height: 26.1%;
   display: flex;
   flex-direction: column;
+  @media screen and (max-width: 640px) {
+    
+  }
 `;
 export const MovesDiv = styled.div`
   width: 100%;
@@ -135,6 +168,13 @@ export const PokeAbsolute = styled.img`
   top: -20%;
   right: 35.14px;
   z-index: 1;
+  @media screen and (max-width: 640px) {
+    order: 1;
+    position: relative;
+    width: 100%;
+    top: 0;
+    right: 0;
+  }
 `;
 export const PokeballAbsolute = styled.img`
   height: 100%;
@@ -146,6 +186,7 @@ export const Stats = styled.div`
   display: flex;
   flex-direction: column;
   gap: 10px;
+ 
 `;
 export const StatsDiv = styled.div`
   display: flex;
@@ -191,8 +232,9 @@ export const NumberPTotal = styled.p`
   justify-content: center;
   align-items: center;
 `;
-export const Teste = styled.div`
+export const StatsTotal = styled.div`
   width: 50%;
+  /* background-color: aqua; */
 `;
 export const TitleMoves = styled.p`
   font-family: "Poppins";
@@ -209,9 +251,10 @@ export const MovesCard = styled.div`
 `;
 export const MovesCardContainer = styled.div``;
 
-export const DivTeste = styled.div`
+export const WidthMoves = styled.div`
   width: 100%;
   display: flex;
+  /* background-color: aqua; */
 `;
 
 export const ShowMoreButton = styled.button`
