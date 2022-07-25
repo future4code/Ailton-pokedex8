@@ -10,6 +10,10 @@ export const Header = styled.header`
     flex-direction: column;
     height: 350px;
   }
+  @media screen and (max-width: 640px) {
+    gap: 0px;
+    padding: 30px;
+  }
 `;
 export const AllPokemonsDiv = styled.div`
   width: 30%;
@@ -39,6 +43,9 @@ export const Logo = styled.img`
   @media (max-width: 950px) {
     margin-top: 30px;
   }
+  @media screen and (max-width: 640px) {
+   /* width: 280px; */
+  }
 `;
 export const PokedexButton = styled.button`
   width: 288px;
@@ -59,6 +66,9 @@ export const PokedexButton = styled.button`
     font-size: 1.5rem;
     width: 200px;
     height: 60px;
+  }
+  @media screen and (max-width: 640px) {
+        padding: 15px 15px;
   }
 `;
 export const PokedexButtonDiv = styled.div`

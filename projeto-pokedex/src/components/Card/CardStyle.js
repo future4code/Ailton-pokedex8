@@ -64,6 +64,9 @@ export const ImagePokemon = styled.img`
     width: 170px;
     top: -30%;
   }
+   @media (max-width: 640px) {
+    left:50%;
+   }
 `;
 export const DivRobin = styled.div`
   justify-content: space-between;

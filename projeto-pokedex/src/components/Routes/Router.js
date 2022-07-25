@@ -38,6 +38,7 @@ export const Router = () => {
           <Route path="/page/:page" element={<Home />}></Route>
           <Route path="/pokedex" element={<Pokedex />} />
           <Route path="/detail/:name" element={<Details />} />
+          
           <Route path="*" element={<ErrorPage />} />
         </Routes>
       </Context.Provider>

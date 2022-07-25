@@ -10,6 +10,12 @@ export const ContainerGeral = styled.div`
   padding: 60px 25px;
   gap: 20px;
   transition: 3s ease;
+    @media screen and (max-width: 640px) {
+      gap:0px;
+      padding: 30px;
+      
+    }
+
 `;
 export const H1Style = styled.p`
   width: 100%;
