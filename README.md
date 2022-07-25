@@ -5,7 +5,7 @@ Nome dos integrantes:
 - João Pedro Zang Gomes
 - André Luiz Amaral Oliveira Bispo
 
-Link do Surge: kind-toothpaste.surge.sh
+Link do Surge: https://kind-toothpaste.surge.sh
 
 O que funciona:
 - Lista Pokémons 
