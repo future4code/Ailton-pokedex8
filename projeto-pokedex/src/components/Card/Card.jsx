@@ -50,15 +50,15 @@ export const Card = ({ pokemonName }) => {
 
   return (
     <>
-      {pokemonDetail && (
+      {pokemonDetail?.id<=890 && (
         <Container color={pokemonDetail.types[0].type.name}>
-          <DivBatman>
+           <DivBatman>
             <DetailsDiv>
               {pokemonDetail && (
                 <PokeInfo
                   size={sizesInfoCard}
                   id={pokemonDetail.id}
-                  name={pokemonDetail.species.name}
+                  name={pokemonDetail.name}
                   types={pokemonDetail.types}
                 />
               )}

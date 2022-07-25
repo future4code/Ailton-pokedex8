@@ -147,7 +147,7 @@ export const Details = () => {
               )}
               {pokemonDetail?.moves.map((data, i) => {
                 const words = data.move.name.split(`-`);
-                console.log(words);
+              
                 if (canShow) {
                   return (
                     <MovesCardContainer key={i}>

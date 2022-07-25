@@ -48,7 +48,7 @@ export const NavigationButtons = () => {
         >
           {actualPage}
         </Button>
-        {actualPage < 49 &&
+        {actualPage < 38 &&
         <Button
           onClick={() =>
             setCurrentPageUrl(
@@ -61,7 +61,7 @@ export const NavigationButtons = () => {
           {actualPage + 1}
         </Button>
         }
-        {actualPage < 48 &&
+        {actualPage < 37 &&
         <Button
           onClick={() =>
             setCurrentPageUrl(
@@ -74,7 +74,7 @@ export const NavigationButtons = () => {
           {actualPage + 2}
         </Button>
         }
-        {actualPage < 47 &&
+        {actualPage < 36 &&
           <Button
             onClick={() =>
               setCurrentPageUrl(
@@ -93,7 +93,7 @@ export const NavigationButtons = () => {
           <Button
             onClick={() =>
               setCurrentPageUrl(
-                `https://pokeapi.co/api/v2/pokemon/?offset=${48 * 24}&limit=24`
+                `https://pokeapi.co/api/v2/pokemon/?offset=${37 * 24}&limit=24`
               )
             }
           >
