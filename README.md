@@ -1,16 +1,17 @@
 # POKEDEX
 
 Nome dos integrantes: 
-- Pessoa 1
-- Pessoa 2
-- Pessoa 3
+- Gabriel Theodoro Ferreira
+- João Pedro Zang Gomes
+- André Luiz Amaral Oliveira Bispo
 
-Link do Surge: www.link.com.br
+Link do Surge: https://kind-toothpaste.surge.sh
 
 O que funciona:
-- Item 1
-- Item 2
+- Lista Pokémons 
+- Detalhes dos Pokémons
+- Paginação 
+- Pokédex
 
 O que não funciona: 
-- Item 3
-- Item 4
+- Batalha Pokemon (Desafio)
